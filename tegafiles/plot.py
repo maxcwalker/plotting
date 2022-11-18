@@ -14,7 +14,6 @@ import numpy as np
 
 plt.style.use('classic')
 
-
 class plotFunctions(object):
     def __init__(self):
         return
@@ -87,7 +86,7 @@ class KatzerPlot(plotFunctions):
         return x, y
 
     def extract_metrics(self):
-        fname = 'opensbli_output_24000000.h5'
+        fname = 'opensbli_output_1000000.h5'
         f, group1 = self.read_file(fname)
         D11 = self.read_dataset(group1, "D11_B0")
         return D11
@@ -237,7 +236,6 @@ class KatzerPlot(plotFunctions):
         plt.savefig(directory + "boundary_layer_velocity.pdf", bbox_inches='tight')
         plt.clf()
 
-
         return
 
     def main_plot(self, fname, n_levels):
@@ -264,10 +262,9 @@ class KatzerPlot(plotFunctions):
         self.SBLI_comparison(Cf, p)
         f.close()
 
-
-fname = "opensbli_output_24000000.h5"
+fname = "opensbli_output_1000000.h5"
 n_contour_levels = 25
-directory = './simulation_plots/'
+directory = './'
 
 if not os.path.exists(directory):
     os.makedirs(directory)
