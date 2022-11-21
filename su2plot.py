@@ -77,7 +77,9 @@ else:
     j = i
 
 #telling you the mesh dimensions used
+print("---------------------------------------------------------")
 print("the mesh is a "+str(xg)+ "x" +str(yg)+" case")
+print("---------------------------------------------------------")
 
 i = len(x) - i
 print("i is = "+str(i))
