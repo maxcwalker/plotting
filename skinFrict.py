@@ -32,73 +32,33 @@ except:
 ma = np.around(f['Mach'], decimals=n)
 cp = np.around(f['Pressure_Coefficient'], decimals=n)
 mu = np.around(f['Laminar_Viscosity'], decimals=n)
+Csfx = np.around(f['Skin_Friction_Coefficient_x'], decimals=n)
+Csfy = np.around(f['Skin_Friction_Coefficient_y'], decimals=n)
+Heat_flux = np.around(f['Heat_Flux'], decimals=n)
+y_plus = np.around(f['Y_Plus'], decimals=n)
 print(rho)
 # velocity from the momentum
 u = rhou/rho
 v = rhov/rho
 u_max = max(u)
-print(u)
 
-#working out the mesh dimensions
-#for x
-if x[0] == x[1]:
-    i = 0
-    xg = 1 #x grid points
-    while x[i+1] == x[i]:
-        if x[i+1] != x[i]:
-            break
-        i += 1
-        xg += 1
+c = 0
+for i in range(len(y_plus)):
+    if y_plus[i] != 0:
+        c += 1
+print("There are "+str(c)+" non zero y plus values.")
 
-    #for y
-    j = 0
-    yg = 0 #y grid points
-    n = len(y)
-    for j in range(n):
-        if y[j] == 0:
-            yg += 1
+d = 0
+for i in range(len(Csfx)):
+    if Csfx[i] != 0:
+        d += 1
+print("There are "+str(d)+" non zero y plus values.")
 
-else:
-    i = 0
-    yg = 1 #x grid points
-    while y[i+1] == y[i]:
-        if y[i+1] != y[i]:
-            break
-        i += 1
-        yg += 1
+e = 0
+for i in range(len(Csfy)):
+    if Csfy[i] != 0:
+        e += 1
+print("There are "+str(e)+" non zero y plus values.")
 
-    #for y
-    j = 0
-    xg = 0 #y grid points
-    n = len(x)
-    for j in range(n):
-        if x[j] == 0:
-            xg += 1
-    j = i
 
-#telling you the mesh dimensions used
-print("the mesh is a "+str(xg)+ "x" +str(yg)+" case")
 
-i = len(x) - i
-print("i is = "+str(i))
-
-pos = (x[i])
-pos = str(round(pos, 3))
-
-y_pos= y[i:i+yg]
-
-#y_pos = np.flip(y_pos)
-u_x = u[i:i+yg]
-#u_x = u_x/u_inf
-#u_x = np.flip(u_x)
-
-#plt.style.use('classic')
-#plotting the velocity profile
-ax1 = plt.plot( u_x, y_pos)
-plt.xlabel("u") #/$U_{inf}$
-plt.ylabel("normal position from the wall [m]")
-plt.title("Velocity profile at point "+pos+"m along plate")
-#plt.xlim([0, 1])
-#plt.ylim([0,0.01])
-plt.show()
-exit()

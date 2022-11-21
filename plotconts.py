@@ -6,7 +6,7 @@ import matplotlib.cm as cm # latex module
 f = np.genfromtxt("restart_flow.csv", names = True, delimiter=',')
 
 #extracting the variables
-n = 5 # number of decimals to round to
+n = 15 # number of decimals to round to
 x = np.around(f['x'], decimals=n)
 y = np.around(f['y'], decimals=n)
 try:
@@ -39,8 +39,11 @@ u_max = max(u)
 # ######################## #
 # ######################## #
 
-T = np.array(T)
+#T = np.array(T)
 P = np.array(P)
-ax1 = plt.contourf( (x,x), (y,y), (P, P), cmap=cm.jet)
+ax1 = plt.contourf([x, y], T, levels = 1000, cmap=cm.jet)
 plt.title("Contours")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.colorbar()
 plt.show()
