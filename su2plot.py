@@ -4,8 +4,9 @@ import numpy as np
 from matplotlib import pyplot as plt
 import math 
 import matplotlib.cm as cm # latex module
+from paraview.simple import *
 
-f = np.genfromtxt("../SU2/mach6_comp_lam_plate/restart_flow.csv", names=True, delimiter = ',')
+f = np.genfromtxt("../SU2/tutorials/compressible/lam_flatplate/restart_flow.csv", names=True, delimiter = ',')
 
 n = 15 # number of decimals to round values to
 x = np.around(f['x'],n )
@@ -92,7 +93,7 @@ u_x = u[i:i+yg]
 #u_x = u_x/u_inf
 #u_x = np.flip(u_x)
 
-plt.style.use('classic')
+#plt.style.use('classic')
 #plotting the velocity profile
 ax1 = plt.plot( u_x, y_pos)
 plt.xlabel("u") #/$U_{inf}$

@@ -39,5 +39,8 @@ u_max = max(u)
 # ######################## #
 # ######################## #
 
-ax1 = plt.contourf(x, y, T)
+T = np.array(T)
+P = np.array(P)
+ax1 = plt.contourf( (x,x), (y,y), (P, P), cmap=cm.jet)
+plt.title("Contours")
 plt.show()
