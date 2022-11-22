@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 import math 
 import matplotlib.cm as cm # latex module
 
-f = np.genfromtxt("/home/maxwalker/git/SU2/tutorials/compressible/lam_flatplate/restart_flow.csv", names=True, delimiter = ',')
+f = np.genfromtxt("../SU2/mach6_comp_lam_plateNemo/restart_flow.csv", names=True, delimiter = ',')
 n = 10
 x = np.around(f['x'],n )
 y = np.around(f['y'], n)

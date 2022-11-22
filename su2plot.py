@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 import math 
 import matplotlib.cm as cm # latex module
 
-f = np.genfromtxt("/home/maxwalker/git/SU2/tutorials/compressible/lam_flatplate/restart_flow.csv", names=True, delimiter = ',')
+f = np.genfromtxt("../SU2/mach6_comp_lam_plateNemo/restart_flow.csv", names=True, delimiter = ',')
 
 n = 15 # number of decimals to round values to
 x = np.around(f['x'],n )
@@ -86,7 +86,6 @@ pos = str(round(pos, 3))
 
 y_pos= y[i:i+yg]
 u_x = u[i:i+yg]
-
 
 #plotting the velocity profile
 ax1 = plt.plot( u_x, y_pos)
