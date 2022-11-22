@@ -39,17 +39,26 @@ u_max = max(u)
 # ######################## #
 # ######################## #
 
-#T = np.array(T)
 newx = x.reshape((65,65))
 newy = y.reshape((65,65))
 newT = T.reshape((65,65))
 newP = P.reshape((65,65))
-P = np.array(P)
-ax1 = plt.contourf(newx, newy, newP, levels = 1000, cmap=cm.jet)
-# plt.scatter(x,y)
-#plt.style("classic")
-plt.title("Contours")
-plt.xlabel("x")
-plt.ylabel("y")
-plt.colorbar()
+
+
+fig, (ax1,ax2) = plt.subplots(2,1)
+fig.set_size_inches(18.5, 10.5)
+T = ax1.contourf(newx, newy, newT, levels = 100, cmap=cm.jet ) 
+ax1.set_title("Temperature Contours")
+ax1.set_xlabel("x")
+ax1.set_ylabel("y")
+tbar = plt.colorbar(T, ax=ax1)
+tbar.set_label("Temperature [$^{\circ}$C]" ) #rotation= 270
+
+P = ax2.contourf(newx, newy, newP, levels = 100)
+ax2.set_title("Pressure Contours")
+ax2.set_xlabel("x")
+ax2.set_ylabel("y")
+Pbar = plt.colorbar(P, ax=ax2)
+Pbar.set_label("Pressure [Pa]" ) #rotation= 270
+
 plt.show()
