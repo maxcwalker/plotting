@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 import math 
 import matplotlib.cm as cm # latex module
 
-#f = np.genfromtxt("/Users/maxwalker/git/SU2/mach6_comp_lam_plateNemo/restart_flow.csv", names=True, delimiter = ',')
+f = np.genfromtxt("/home/maxwalker/git/SU2/tutorials/compressible/lam_flatplate/restart_flow.csv", names=True, delimiter = ',')
 
 n = 15 # number of decimals to round values to
 x = np.around(f['x'],n )
@@ -100,22 +100,32 @@ newx = x.reshape((xg,yg))
 newy = y.reshape((xg,yg))
 newT = T.reshape((xg,yg))
 newP = P.reshape((xg,yg))
+newU = u.reshape((xg,yg))
 
-fig, (ax1,ax2) = plt.subplots(2,1)
+fig, (ax1,ax2, ax3) = plt.subplots(3,1)
 fig.set_size_inches(18.5, 10.5)
 T = ax1.contourf(newx, newy, newT, levels = 1000, cmap=cm.jet ) 
-ax1.set_title("Temperature Contours for a {} by {} grid".format(xg, yg))
-ax1.set_xlabel("x")
+ax1.set_title("Temperature Contours for a {}x{} grid".format(xg, yg))
 ax1.set_ylabel("y")
+ax1.set_ylim([0, 0.001])
 tbar = plt.colorbar(T, ax=ax1)
 tbar.set_label("Temperature [$^{\circ}$C]" ) #rotation= 270
 
 P = ax2.contourf(newx, newy, newP, levels = 1000)
-ax2.set_title("Pressure Contours for a {} by {} grid".format(xg, yg))
-ax2.set_xlabel("x")
+ax2.set_title("Pressure Contours for a {}x{} grid".format(xg, yg))
 ax2.set_ylabel("y")
+ax2.set_ylim([0, 0.001])
 Pbar = plt.colorbar(P, ax=ax2)
 Pbar.set_label("Pressure [Pa]" ) #rotation= 270
+plt.legend
+
+U = ax3.contourf(newx, newy, newU, levels = 1000)
+ax3.set_title("X_Velocity Contours for a {}x{} grid".format(xg, yg))
+ax3.set_xlabel("x")
+ax3.set_ylabel("y")
+ax3.set_ylim([0, 0.001])
+ubar = plt.colorbar(U, ax=ax3)
+ubar.set_label("X_Velocity [ms$^{-1}$]" ) #rotation= 270
 plt.legend
 
 plt.show()
