@@ -3,14 +3,33 @@ from matplotlib import pyplot as plt
 import math 
 import matplotlib.cm as cm # latex module
 
-f = np.genfromtxt("../SU2/mach6_comp_lam_plateNemo/restart_flow.csv", names=True, delimiter = ',')
-n = 10
+f = np.genfromtxt("/home/maxwalker/git/SU2/mach6_comp_lam_plate/restart_flow.csv", names=True, delimiter = ',')
+n = 15 # number of decimals to round values to
 x = np.around(f['x'],n )
 y = np.around(f['y'], n)
-rho = np.around(f['Density'], decimals=n)
+try:
+    rho = np.around(f['Density'], decimals=n)
+except:
+    rho1 = np.around(f['Density_0'], decimals=n)
+    rho2 = np.around(f['Density_1'], decimals=n)
+    rho3 = np.around(f['Density_2'], decimals=n)
+    rho4 = np.around(f['Density_3'], decimals=n)
+    rho5 = np.around(f['Density_4'], decimals=n)
+    rhon = [rho1,rho2,rho3,rho4,rho5]
+    rho = sum(rhon)
+
 rhou = np.around(f['Momentum_x'], decimals=n)
 rhov = np.around(f['Momentum_y'], decimals=n)
-
+E= np.around(f['Energy'], decimals=n)
+P = np.around(f['Pressure'], decimals=n)
+try:    
+    T = np.around(f['Temperature'], decimals=n)
+except:
+    T = np.around(f['Temperature_tr'], decimals=n)
+ma = np.around(f['Mach'], decimals=n)
+cp = np.around(f['Pressure_Coefficient'], decimals=n)
+mu = np.around(f['Laminar_Viscosity'], decimals=n)
+# velocity from the momentum
 u = rhou/rho
 v = rhov/rho
 u_max = max(u)
@@ -57,9 +76,11 @@ yb_nondim = y_pos2/max(y_pos2)
 #plt.title("Velocity profile at point "+pos+"m along plate")
 
 #plotting the velocity profile [non dimensional]
-plt.plot( ub_nondim, yb_nondim)
+plt.plot( ub_nondim, yb_nondim, color = 'green', marker= 'x')
 plt.xlabel("u/$U_\infty$")
 plt.ylabel("$y/\delta$")
-plt.title("Laminar boundary layer at "+pos+"m along plate for a {}x{} mesh".format(xg,yg))
-
+plt.title("Laminar boundary layer at "+pos+"m along plate for a {}x{} mesh \n the boundary layer has {} points in the wall normal direction".format(xg,yg, len(yb_nondim)))
+print("---------------------------------------")
+print(len(u_x))
+print("---------------------------------------")
 plt.show()
