@@ -1,9 +1,10 @@
+#This script will calculate non dimensional plots
 import numpy as np
 from matplotlib import pyplot as plt
 import math 
 import matplotlib.cm as cm # latex module
 
-f = np.genfromtxt("../SU2/mach6_comp_lam_plate/restart_flow.csv", names=True, delimiter = ',')
+f = np.genfromtxt("../SU2/tutorials/compressible/lam_flatplate/restart_flow.csv", names=True, delimiter = ',')
 
 n = 15 # number of decimals to round values to
 x = np.around(f['x'],n )
@@ -29,11 +30,35 @@ except:
     T = np.around(f['Temperature_tr'], decimals=n)
 ma = np.around(f['Mach'], decimals=n)
 cp = np.around(f['Pressure_Coefficient'], decimals=n)
-#mu = np.around(f['Laminar_Viscosity'], decimals=n)
+mu = np.around(f['Laminar_Viscosity'], decimals=n)
 # velocity from the momentum
 u = rhou/rho
 v = rhov/rho
 u_max = max(u)
 
-plt.scatter(x,y, marker ='.')
+#---------------------------------------#
+xg = 0
+while x[xg]== x[xg+1]:
+    xg +=1
+xg = xg +1
+yg = len([y for y in y if y==0])
+
+#--------------------------------------#1
+#position of wall at any given x position
+n =  2 # - 2 just so its not at the outlet
+pos_w = n*yg - 1
+pos_w2 = pos_w -1 # first cell from wall
+
+print(y[pos_w])
+#wall shear stress
+dudy = (u[pos_w-64:pos_w])/(y[pos_w-64:pos_w])
+t_wall = mu[pos_w-64:pos_w]*(dudy)
+print(t_wall)
+
+u_tau = np.sqrt(t_wall/rho[pos_w-64:pos_w])
+u_plus = u[pos_w-64:pos_w]/u_tau
+nu = rho[pos_w-64:pos_w]/mu[pos_w-64:pos_w]
+y_plus = (u_tau*y[pos_w-64:pos_w])/nu
+
+plt.plot(u_plus,y_plus,marker='o')
 plt.show()
