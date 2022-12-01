@@ -4,9 +4,9 @@ from matplotlib import pyplot as plt
 import math 
 import matplotlib.cm as cm # latex module
 
-f = np.genfromtxt("../SU2/tutorials/compressible/lam_flatplate/restart_flow.csv", names=True, delimiter = ',')
+f = np.genfromtxt("../SU2/mach6_comp_lam_plateNemo/restart_flow.csv", names=True, delimiter = ',')
 
-n = 15 # number of decimals to round values to
+n = 8 # number of decimals to round values to
 x = np.around(f['x'],n )
 y = np.around(f['y'], n)
 try:
@@ -37,28 +37,37 @@ v = rhov/rho
 u_max = max(u)
 
 #---------------------------------------#
-xg = 0
-while x[xg]== x[xg+1]:
-    xg +=1
-xg = xg +1
-yg = len([y for y in y if y==0])
+#if x[0] == x[1]:
+p = 0
+while x[p] == x[p+1]:
+    p += 1
+yg = p +1
+xg = len([y for y in y if y==0])
+#else:
+#    yg = len([x for x in x if x==0])
+#    lg = 0
+#    while y[lg] == y[lg+1]:
+#        lg +=1
+#    xg = lg +1
 
-#--------------------------------------#1
+print("The mesh is {}x{}".format(xg,yg))
+#--------------------------------------#
 #position of wall at any given x position
-n =  2 # - 2 just so its not at the outlet
-pos_w = n*yg - 1
+n =  yg-2# - 2 just so its not at the outlet
+pos_w = n*yg +yg -1 
 pos_w2 = pos_w -1 # first cell from wall
 
 print(y[pos_w])
 #wall shear stress
-dudy = (u[pos_w-64:pos_w])/(y[pos_w-64:pos_w])
-t_wall = mu[pos_w-64:pos_w]*(dudy)
-print(t_wall)
+dudy = (u[pos_w2])/(y[pos_w2])
+t_wall = mu[(pos_w-yg+1):pos_w]*(dudy)
 
-u_tau = np.sqrt(t_wall/rho[pos_w-64:pos_w])
-u_plus = u[pos_w-64:pos_w]/u_tau
-nu = rho[pos_w-64:pos_w]/mu[pos_w-64:pos_w]
-y_plus = (u_tau*y[pos_w-64:pos_w])/nu
+u_tau = np.sqrt(t_wall/rho[(pos_w-yg+1):pos_w])
+u_plus = u[(pos_w-yg+1):pos_w]/u_tau
+nu = rho[(pos_w-yg+1):pos_w]/mu[(pos_w-yg+1):pos_w]
+y_plus = (u_tau*y[(pos_w-yg+1):pos_w])/nu
 
-plt.plot(u_plus,y_plus,marker='o')
+plt.plot(u_plus,y_plus)
+#plt.scatter(x,y)
+
 plt.show()

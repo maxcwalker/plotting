@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 import math 
 import matplotlib.cm as cm # latex module
 
-f = np.genfromtxt("../SU2/tutorials/compressible/lam_flatplate/restart_flow.csv", names=True, delimiter = ',')
+f = np.genfromtxt("../SU2/mach6_comp_lam_plateNemo/restart_flow.csv", names=True, delimiter = ',')
 n = 15 # number of decimals to round values to
 x = np.around(f['x'],n )
 y = np.around(f['y'], n)
@@ -51,10 +51,15 @@ if x[0] == x[1]:
         if y[j] == 0:
             yg += 1
 
+
+
+####################################################################
+####################################################################
+#5th plot
 i = len(x) - i
 
-pos = (x[i])
-pos = str(round(pos, 3))
+pos5 = (x[i])
+pos5 = str(round(pos5, 3))
 y_pos= y[i:i+yg]
 u_x = u[i:i+yg]
 u_max = max(u_x)
@@ -66,20 +71,105 @@ for i in range(len(u_x)):
     if u_x[i] <= 0.99*u_max:
         u_x2.append(u_x[i])
         y_pos2.append(y_pos[i])
-ub_nondim = u_x2/max(u_x2)
-yb_nondim = y_pos2/max(y_pos2)
+ub5_nondim = u_x2/max(u_x2)
+yb5_nondim = y_pos2/max(y_pos2)
 
-#plotting the velocity profile [dimensional]
-#plt.plot( u_x2, y_pos2)
-#plt.xlabel("u") #/$U_{inf}$
-#plt.ylabel("normal position from the wall [m]")
-#plt.title("Velocity profile at point "+pos+"m along plate")
+#############################################################################
+#4th plot
+i = len(x) - 2*i
+
+pos4 = (x[i])
+pos4 = str(round(pos4, 3))
+y_pos= y[i:i+yg]
+u_x = u[i:i+yg]
+u_max = max(u_x)
+
+#u_x = [x for x in u_x if x <= 0.99*u_max]
+u_x2 =[]
+y_pos2 =[]
+for i in range(len(u_x)):
+    if u_x[i] <= 0.99*u_max:
+        u_x2.append(u_x[i])
+        y_pos2.append(y_pos[i])
+ub4_nondim = u_x2/max(u_x2)
+yb4_nondim = y_pos2/max(y_pos2)
+
+###################################################################
+#3th plot
+i = len(x) - 3*i
+
+pos3 = (x[i])
+pos3 = str(round(pos3, 3))
+y_pos= y[i:i+yg]
+u_x = u[i:i+yg]
+u_max = max(u_x)
+
+#u_x = [x for x in u_x if x <= 0.99*u_max]
+u_x2 =[]
+y_pos2 =[]
+for i in range(len(u_x)):
+    if u_x[i] <= 0.99*u_max:
+        u_x2.append(u_x[i])
+        y_pos2.append(y_pos[i])
+ub3_nondim = u_x2/max(u_x2)
+yb3_nondim = y_pos2/max(y_pos2)
+
+###############################################################
+#2nd plot
+
+i = len(x) - 4*i
+
+pos2 = (x[i])
+pos2 = str(round(pos2, 3))
+y_pos= y[i:i+yg]
+u_x = u[i:i+yg]
+u_max = max(u_x)
+
+#u_x = [x for x in u_x if x <= 0.99*u_max]
+u_x2 =[]
+y_pos2 =[]
+for i in range(len(u_x)):
+    if u_x[i] <= 0.99*u_max:
+        u_x2.append(u_x[i])
+        y_pos2.append(y_pos[i])
+ub2_nondim = u_x2/max(u_x2)
+yb2_nondim = y_pos2/max(y_pos2)
+
+####################################################################
+#1st plot
+
+i = len(x) - 5*i
+
+pos1 = (x[i])
+pos1 = str(round(pos1, 3))
+y_pos= y[i:i+yg]
+u_x = u[i:i+yg]
+u_max = max(u_x)
+
+#u_x = [x for x in u_x if x <= 0.99*u_max]
+u_x2 =[]
+y_pos2 =[]
+for i in range(len(u_x)):
+    if u_x[i] <= 0.99*u_max:
+        u_x2.append(u_x[i])
+        y_pos2.append(y_pos[i])
+ub1_nondim = u_x2/max(u_x2)
+yb1_nondim = y_pos2/max(y_pos2)
+
+######################################################################
+######################################################################
 
 #plotting the velocity profile [non dimensional]
-plt.plot( ub_nondim, yb_nondim, color = 'green', marker= 'x')
+plt.plot( ub5_nondim, yb5_nondim, color = 'green', label = '{}m along plate'.format(pos5))
+plt.plot( ub4_nondim, yb4_nondim, color = 'orange', label = '{}m along plate'.format(pos4))
+plt.plot( ub3_nondim, yb3_nondim, color = 'purple', label = '{}m along plate'.format(pos3))
+plt.plot( ub2_nondim, yb2_nondim, color = 'pink', label = '{}m along plate'.format(pos2))
+plt.plot( ub1_nondim, yb1_nondim, color = 'blue', label = '{}m along plate'.format(pos1))
+plt.legend()
+
 plt.xlabel("u/$U_\infty$")
 plt.ylabel("$y/\delta$")
-plt.title("Laminar boundary layer at "+pos+"m along plate for a {}x{} mesh \n the boundary layer has {} points in the wall normal direction".format(xg,yg, len(yb_nondim)))
+plt.title("Laminar Boundary layer at several points along the plate")
 print("---------------------------------------")
 print(len(u_x))
 print("---------------------------------------")

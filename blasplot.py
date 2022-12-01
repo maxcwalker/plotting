@@ -1,13 +1,9 @@
-#calculation of various parameters
-
-#This plotting script is for a standard compressible flow
-
 import numpy as np
 from matplotlib import pyplot as plt
 import math 
 import matplotlib.cm as cm # latex module
 
-f = np.genfromtxt("/home/maxwalker/git/SU2/mach6_comp_lam_plate/restart_flow.csv", names=True, delimiter = ',')
+f = np.genfromtxt("../SU2/tutorials/compressible/lam_flatplate/restart_flow.csv", names=True, delimiter = ',')
 
 n = 15 # number of decimals to round values to
 x = np.around(f['x'],n )
@@ -38,10 +34,59 @@ mu = np.around(f['Laminar_Viscosity'], decimals=n)
 u = rhou/rho
 v = rhov/rho
 u_max = max(u)
-#-------------------------------------------------------------------------------#
 
-def reynolds(rho,u,x,mu):
-    Re = (rho*u*x)/mu
-    return Re
+#working out the mesh dimensions
+#for x
 
-Re = reynolds(rho,u,np.linspace(1,1,len(rho)),mu).T()
+i = 0
+yg = 1 #x grid points
+while x[i+1] == x[i]:
+    if x[i+1] != x[i]:
+        break
+    i += 1
+    yg += 1 
+
+xg = len([y for y in y if y == 0])
+print("This is a {}x{} mesh".format(xg,yg))
+n = 2
+y_xloc1 = xg*yg - n*yg  # array pf y at a cetain x location
+y_xloc2 = xg*yg - (n-1)*yg
+
+U = np.full((y_xloc2-y_xloc1),max(u))
+print(U.shape)
+y = y[y_xloc1:y_xloc2]
+print(y.shape)
+x = x[y_xloc1:y_xloc2]
+u = u[y_xloc1:y_xloc2]
+nu = rho[y_xloc1:y_xloc2]/mu[y_xloc1:y_xloc2]
+print(nu.shape)
+
+eta = y*np.sqrt(U/(nu*x))
+print(eta.shape)
+u_max = max(u)
+ub =[]
+etab =[]
+for i in range(len(u)):
+    if u[i] <= 0.99*u_max:
+        ub.append(u[i])
+        etab.append(eta[i])
+ub_ndim = ub/u_max
+
+#blasius f''' + ff'' = 0
+def f(x):
+    dxdt = u[1]
+    dvdt = u[2]
+    dwdt = -u[0]*u[2]
+    return np.array([dxdt,dvdt,dwdt])
+
+
+
+
+
+
+
+#plt.plot(ub_ndim,etab)
+#plt.xlabel("$u/U$")
+#plt.ylabel("$\eta$")
+#plt.show()
+
