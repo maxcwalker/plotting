@@ -6,7 +6,6 @@ import math
 import matplotlib.cm as cm # latex module
 
 f = np.genfromtxt("../SU2/mach6_comp_lam_plateNemo/restart_flow.csv", names=True, delimiter = ',')
-
 n = 15 # number of decimals to round values to
 x = np.around(f['x'],n )
 y = np.around(f['y'], n)
@@ -25,7 +24,7 @@ rhou = np.around(f['Momentum_x'], decimals=n)
 rhov = np.around(f['Momentum_y'], decimals=n)
 E= np.around(f['Energy'], decimals=n)
 P = np.around(f['Pressure'], decimals=n)
-try:    
+try:  
     T = np.around(f['Temperature'], decimals=n)
 except:
     T = np.around(f['Temperature_tr'], decimals=n)
@@ -88,10 +87,10 @@ y_pos= y[i:i+yg]
 u_x = u[i:i+yg]
 
 #plotting the velocity profile
-ax1 = plt.plot( u_x, y_pos, marker='x')
-plt.xlabel("u") #/$U_{inf}$
-plt.ylabel("normal position from the wall [m]")
-plt.title("Velocity profile at point "+pos+"m along plate")
+#ax1 = plt.plot( u_x, y_pos, marker='x')
+#plt.xlabel("u") #/$U_{inf}$
+#plt.ylabel("normal position from the wall [m]")
+#plt.title("Velocity profile at point "+pos+"m along plate")
 #plt.xlim([0, 1])
 #plt.ylim([0,0.01])
 

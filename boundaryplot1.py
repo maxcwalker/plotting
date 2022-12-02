@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 import math 
 import matplotlib.cm as cm # latex module
 
-f = np.genfromtxt("../SU2/mach6_comp_lam_plateNemo/restart_flow.csv", names=True, delimiter = ',')
+f = np.genfromtxt("../SU2/mach1_comp_lam_plate/restart_flow.csv", names=True, delimiter = ',')
 n = 15 # number of decimals to round values to
 x = np.around(f['x'],n )
 y = np.around(f['y'], n)
@@ -53,10 +53,7 @@ if x[0] == x[1]:
         if y[j] == 0:
             yg += 1
 
-
-
-
-i = len(x) - i
+i = len(x) - yg*int((xg*0.04))
 
 pos = (x[i])
 pos = str(round(pos, 3))

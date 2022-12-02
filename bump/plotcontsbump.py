@@ -5,11 +5,11 @@ from matplotlib import pyplot as plt
 import math 
 import matplotlib.cm as cm # latex module
 
-f = np.genfromtxt("/Users/maxwalker/git/SU2/tutorials/compressible/inviscid_bump/restart_flow.csv", names=True, delimiter = ',')
+f = np.genfromtxt("../../SU2/inv_bump_mach2/restart_flow.csv", names=True, delimiter = ',')
 
 n = 5 # number of decimals to round values to
-x = np.around(f['x'], 2 )
-y = np.around(f['y'], 3 )
+x = np.around(f['x'], n )
+y = np.around(f['y'], n )
 rho = np.around(f['Density'], decimals=n)
 rhou = np.around(f['Momentum_x'], decimals=n)
 rhov = np.around(f['Momentum_y'], decimals=n)
@@ -60,17 +60,18 @@ newy = y.reshape(yg,xg)
 newT = T.reshape(yg,xg)
 newP = P.reshape(yg,xg)
 newU = u.reshape(yg,xg)
+levels1 = 100
 
 fig, (ax1,ax2, ax3) = plt.subplots(3,1)
 fig.set_size_inches(10, 10.5)
-T = ax1.contourf(newx, newy, newT, levels = 100 ) 
+T = ax1.contourf(newx, newy, newT, levels = levels1 ) 
 ax1.set_title("Temperature Contours for a {}x{} grid".format(xg, yg))
 ax1.set_ylabel("y")
 ax1.set_aspect(1)
 tbar = plt.colorbar(T, ax=ax1)
 tbar.set_label("Temperature [$^{\circ}$C]" ) #rotation= 270
 
-P = ax2.contourf(newx, newy, newP, levels = 100)
+P = ax2.contourf(newx, newy, newP, levels = levels1)
 ax2.set_title("Pressure Contours for a {}x{} grid".format(xg, yg))
 ax2.set_ylabel("y")
 ax2.set_aspect(1)
@@ -78,7 +79,7 @@ Pbar = plt.colorbar(P, ax=ax2)
 Pbar.set_label("Pressure [Pa]" ) #rotation= 270
 plt.legend
 
-U = ax3.contourf(newx, newy, newU, levels = 100)
+U = ax3.contourf(newx, newy, newU, levels = levels1 )
 ax3.set_title("X_Velocity Contours for a {}x{} grid".format(xg, yg))
 ax3.set_xlabel("x")
 ax3.set_ylabel("y")

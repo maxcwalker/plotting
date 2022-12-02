@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 import math 
 import matplotlib.cm as cm # latex module
 
-f = np.genfromtxt("../SU2/mach6_comp_lam_plateNemo/restart_flow.csv", names=True, delimiter = ',')
+f = np.genfromtxt("../SU2/mach6_comp_lam_plate/restart_flow.csv", names=True, delimiter = ',')
 n = 15 # number of decimals to round values to
 x = np.around(f['x'],n )
 y = np.around(f['y'], n)
@@ -34,32 +34,16 @@ u = rhou/rho
 v = rhov/rho
 u_max = max(u)
 
-if x[0] == x[1]:
-    i = 0
-    xg = 1 #x grid points
-    while x[i+1] == x[i]:
-        if x[i+1] != x[i]:
-            break
-        i += 1
-        xg += 1
-
-    #for y
-    j = 0
-    yg = 0 #y grid points
-    n = len(y)
-    for j in range(n):
-        if y[j] == 0:
-            yg += 1
-
+#calculating the mesh 
+yg = len([x for x in x if x ==0])
+xg = len(x)/yg 
 
 
 ####################################################################
 ####################################################################
 #5th plot
-i = len(x) - i
-
-pos5 = (x[i])
-pos5 = str(round(pos5, 3))
+i = len(x) - yg*int((xg*0.05))
+pos5 = int((100*(x[i]/max(x))))
 y_pos= y[i:i+yg]
 u_x = u[i:i+yg]
 u_max = max(u_x)
@@ -76,10 +60,10 @@ yb5_nondim = y_pos2/max(y_pos2)
 
 #############################################################################
 #4th plot
-i = len(x) - 2*i
+i = len(x) - int(yg*(xg*0.1))
+print(i)
 
-pos4 = (x[i])
-pos4 = str(round(pos4, 3))
+pos4 = int((100*(x[i]/max(x))))
 y_pos= y[i:i+yg]
 u_x = u[i:i+yg]
 u_max = max(u_x)
@@ -96,10 +80,10 @@ yb4_nondim = y_pos2/max(y_pos2)
 
 ###################################################################
 #3th plot
-i = len(x) - 3*i
+i = len(x) - yg*int((xg*0.15))
+print(i)
+pos3 = int((100*(x[i]/max(x))))
 
-pos3 = (x[i])
-pos3 = str(round(pos3, 3))
 y_pos= y[i:i+yg]
 u_x = u[i:i+yg]
 u_max = max(u_x)
@@ -116,11 +100,10 @@ yb3_nondim = y_pos2/max(y_pos2)
 
 ###############################################################
 #2nd plot
+print(i)
+i = len(x) - yg*int((xg*0.20))
 
-i = len(x) - 4*i
-
-pos2 = (x[i])
-pos2 = str(round(pos2, 3))
+pos2 = int((100*(x[i]/max(x))))
 y_pos= y[i:i+yg]
 u_x = u[i:i+yg]
 u_max = max(u_x)
@@ -138,10 +121,9 @@ yb2_nondim = y_pos2/max(y_pos2)
 ####################################################################
 #1st plot
 
-i = len(x) - 5*i
-
-pos1 = (x[i])
-pos1 = str(round(pos1, 3))
+i = len(x) - yg*int((xg*0.25))
+print(i)
+pos1 = int((100*(x[i]/max(x))))
 y_pos= y[i:i+yg]
 u_x = u[i:i+yg]
 u_max = max(u_x)
@@ -159,12 +141,13 @@ yb1_nondim = y_pos2/max(y_pos2)
 ######################################################################
 ######################################################################
 
+
 #plotting the velocity profile [non dimensional]
-plt.plot( ub5_nondim, yb5_nondim, color = 'green', label = '{}m along plate'.format(pos5))
-plt.plot( ub4_nondim, yb4_nondim, color = 'orange', label = '{}m along plate'.format(pos4))
-plt.plot( ub3_nondim, yb3_nondim, color = 'purple', label = '{}m along plate'.format(pos3))
-plt.plot( ub2_nondim, yb2_nondim, color = 'pink', label = '{}m along plate'.format(pos2))
-plt.plot( ub1_nondim, yb1_nondim, color = 'blue', label = '{}m along plate'.format(pos1))
+plt.plot( ub5_nondim, yb5_nondim, color = 'green', label = '{}{} along plate'.format(pos5,"%"))
+plt.plot( ub4_nondim, yb4_nondim, color = 'orange', label = '{}{}along plate'.format(pos4,"%"))
+plt.plot( ub3_nondim, yb3_nondim, color = 'purple', label = '{}{} along plate'.format(pos3,"%"))
+plt.plot( ub2_nondim, yb2_nondim, color = 'black', label = '{}{} along plate'.format(pos2,"%"))
+plt.plot( ub1_nondim, yb1_nondim, color = 'blue', label = '{}{} along plate'.format(pos1,"%"))
 plt.legend()
 
 plt.xlabel("u/$U_\infty$")
