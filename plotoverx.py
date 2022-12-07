@@ -39,21 +39,36 @@ xg = len([y for y in y if y ==0])
 yg = int(len(y)/xg)
 print("The mesh is {}x{}".format(xg,yg))
 ### -------------- ###
-variable = P
-y_pos = 0.01 #choose what point above the wall
-y = np.around(y, 3 )
-x_pos =[]
-variable1 = []
 
-for i in range(len(y)):
-    if y[i] == y_pos:
-        x_pos.append(x[i])
-        variable1.append(variable[i])
+def varOverX(x,y,variable):
 
-print(len(x_pos))
-plt.plot(x_pos,variable1)
-plt.xlabel('X position [m]')
-plt.ylabel('Pressure [Pa]')
+    y_pos = 0.01  # choose what point above the wall
+    y = np.around(y, 3 )
+    x_pos = []
+    variable1 = []
 
-plt.show()
+    for i in range(len(y)):
+        if y[i] == y_pos:
+            x_pos.append(x[i])
+            variable1.append(variable[i])
 
+    print(len(x_pos))
+    ax = plt.plot(x_pos,variable1)
+    plt.xlabel('X position [m]')
+    plt.ylabel('Pressure [Pa]')
+    plt.title('Plot of Pressure over domain at y = {}m'.format(str(y_pos)))
+
+newU = u.reshape(xg,yg).astype(int)
+newY = y.reshape(xg,yg).astype(int)
+print(type(newU))
+
+u_boundary = []
+y_boundary = []
+
+for i in newU:
+    for j in newU[i]:
+        if newU[i][j] <= 0.5*max(newU[:][j]):
+            u_boundary.append(newU[i][j])
+        else:
+            j+=1
+print(np.shape(u_boundary))
