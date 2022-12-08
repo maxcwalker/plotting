@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 import math 
 import matplotlib.cm as cm # latex module
 
-f = np.genfromtxt("../SU2/mach6_comp_lam_plate/restart_flow.csv", names=True, delimiter = ',')
+f = np.genfromtxt("../SU2/mach2_comp_lam_plate/restart_flow.csv", names=True, delimiter = ',')
 
 n = 15 # number of decimals to round values to
 x = np.around(f['x'],n )
@@ -35,5 +35,17 @@ u = rhou/rho
 v = rhov/rho
 u_max = max(u)
 
-plt.scatter(x,y, marker ='.')
+yg = int(len([x for x in x if x==0 ]))
+xg = int(len(x)/yg)
+
+plt.style.use('classic')
+fig, ax = plt.subplots(1,1)
+ax.scatter(x,y, marker ='.')
+ax.set_ylabel('y')
+ax.set_xlabel('x')
+ax.set_title('scatter grap of {}x{} grid'.format(xg,yg))
+ax.set_ylim([0.004, 0.006])
+ax.grid()
+#ax.set_aspect(1)
+
 plt.show()

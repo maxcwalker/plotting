@@ -38,100 +38,113 @@ u_max = max(u)
 
 #working out the mesh dimensions
 #for x
-if x[0] == x[1]:
-    i = 0
-    xg = 1 #x grid points
-    while x[i+1] == x[i]:
-        if x[i+1] != x[i]:
-            break
-        i += 1
-        xg += 1
 
-    #for y
-    j = 0
-    yg = 0 #y grid points
-    n = len(y)
-    for j in range(n):
-        if y[j] == 0:
-            yg += 1
-
-else:
-    i = 0
-    yg = 1 #x grid points
-    while y[i+1] == y[i]:
-        if y[i+1] != y[i]:
-            break
-        i += 1
-        yg += 1
-
-    #for y
-    j = 0
-    xg = 0 #y grid points
-    n = len(x)
-    for j in range(n):
-        if x[j] == 0:
-            xg += 1
-    j = i
+xg = len([y for y in y if y == 0])
+yg = int(len(y)/xg)
 
 #telling you the mesh dimensions used
 print("------------------------------------------------------------------")
 print("the mesh is a "+str(xg)+ "x" +str(yg)+" case")
 print("------------------------------------------------------------------")
 
-i = len(x) - i
+i = len(x) - yg*int((xg*0.04))
 
 pos = (x[i])
 pos = str(round(pos, 3))
 
-y_pos= y[i:i+yg]
-u_x = u[i:i+yg]
+plt.style.use('classic')
 
-#plotting the velocity profile
-#ax1 = plt.plot( u_x, y_pos, marker='x')
-#plt.xlabel("u") #/$U_{inf}$
-#plt.ylabel("normal position from the wall [m]")
-#plt.title("Velocity profile at point "+pos+"m along plate")
-#plt.xlim([0, 1])
-#plt.ylim([0,0.01])
+def velocityProfile(y,u,i,yg):
+    y_pos= y[i:i+yg]
+    u_x = u[i:i+yg]
 
-newx = x.reshape((xg,int(len(x)/xg)))
-newy = y.reshape(xg,int(len(x)/xg))
-newT = T.reshape(xg,int(len(x)/xg))
-newP = P.reshape(xg,int(len(x)/xg))
-newU = u.reshape(xg,int(len(x)/xg))
+    #plotting the velocity profile
+    ax1 = plt.plot( u_x, y_pos, marker='x')
+    plt.xlabel("u") #/$U_{inf}$
+    plt.ylabel("normal position from the wall [m]")
+    plt.title("Velocity profile at point "+pos+"m along plate")
+    plt.ylim([0,0.001])
 
-levelsT = np.linspace(200,550,1000)
-levelsP = np.linspace(95000,122000,1000)
-levelsU = np.linspace(0,800,1000)
+def contours(x,y,T,P,u):
+    newx = x.reshape((xg,int(len(x)/xg)))
+    newy = y.reshape(xg,int(len(x)/xg))
+    newT = T.reshape(xg,int(len(x)/xg))
+    newP = P.reshape(xg,int(len(x)/xg))
+    newU = u.reshape(xg,int(len(x)/xg))
+
+    levelsT = np.linspace(200,550,1000)
+    levelsP = np.linspace(95000,122000,1000)
+    levelsU = np.linspace(0,800,1000)
 
 
-fig, (ax1,ax2, ax3) = plt.subplots(3,1)
-fig.set_size_inches(18.5, 10.5)
-T = ax1.contourf( newx, newy, newT, levels = levelsT, cmap=cm.jet ) 
-ax1.set_title("Temperature Contours for a {}x{} grid".format(xg, yg))
-ax1.set_ylabel("y")
-tbar = plt.colorbar(T, ax=ax1)
-tbar.set_label("Temperature [$^{\circ}$C]" ) #rotation= 270
+    fig, (ax1,ax2, ax3) = plt.subplots(3,1)
+    fig.set_size_inches(18.5, 10.5)
+    T = ax1.contourf( newx, newy, newT, levels = levelsT, cmap=cm.jet ) 
+    ax1.set_title("Temperature Contours for a {}x{} grid".format(xg, yg))
+    ax1.set_ylabel("y")
+    tbar = plt.colorbar(T, ax=ax1)
+    tbar.set_label("Temperature [$^{\circ}$C]" ) #rotation= 270
 
-P = ax2.contourf(newx, newy, newP, levels = levelsP)
-ax2.set_title("Pressure Contours for a {}x{} grid".format(xg, yg))
-ax2.set_ylabel("y")
-Pbar = plt.colorbar(P, ax=ax2)
-Pbar.set_label("Pressure [Pa]" ) #rotation= 270
-plt.legend
+    P = ax2.contourf(newx, newy, newP, levels = levelsP)
+    ax2.set_title("Pressure Contours for a {}x{} grid".format(xg, yg))
+    ax2.set_ylabel("y")
+    Pbar = plt.colorbar(P, ax=ax2)
+    Pbar.set_label("Pressure [Pa]" ) #rotation= 270
+    plt.legend
 
-U = ax3.contourf(newx, newy, newU, levels = levelsU)
-ax3.set_title("X_Velocity Contours for a {}x{} grid".format(xg, yg))
-ax3.set_xlabel("x")
-ax3.set_ylabel("y")
-ubar = plt.colorbar(U, ax=ax3)
-ubar.set_label("X_Velocity [ms$^{-1}$]" ) #rotation= 270
-plt.legend
+    U = ax3.contourf(newx, newy, newU, levels = levelsU)
+    ax3.set_title("X_Velocity Contours for a {}x{} grid".format(xg, yg))
+    ax3.set_xlabel("x")
+    ax3.set_ylabel("y")
+    ubar = plt.colorbar(U, ax=ax3)
+    ubar.set_label("X_Velocity [ms$^{-1}$]" ) #rotation= 270
+    plt.legend
 
-ax1.set_ylim([0, 0.001])
-ax2.set_ylim([0, 0.001])
-ax3.set_ylim([0, 0.001])
-#ax1.set_aspect(1)
-#ax2.set_aspect(1)
-#ax3.set_aspect(1)
+    ax1.set_aspect(1)
+    ax2.set_aspect(1)
+    ax3.set_aspect(1)
+
+def boundarycontours(x,y,T,P,u):
+    newx = x.reshape((xg,int(len(x)/xg)))
+    newy = y.reshape(xg,int(len(x)/xg))
+    newT = T.reshape(xg,int(len(x)/xg))
+    newP = P.reshape(xg,int(len(x)/xg))
+    newU = u.reshape(xg,int(len(x)/xg))
+
+    levelsT = np.linspace(200,550,1000)
+    levelsP = np.linspace(95000,122000,1000)
+    levelsU = np.linspace(0,800,1000)
+
+    fig, (ax1,ax2, ax3) = plt.subplots(3,1)
+    fig.set_size_inches(18.5, 10.5)
+    T = ax1.contourf( newx, newy, newT, levels = levelsT, cmap=cm.jet ) 
+    ax1.set_title("Temperature Contours for a {}x{} grid".format(xg, yg))
+    ax1.set_ylabel("y")
+    tbar = plt.colorbar(T, ax=ax1)
+    tbar.set_label("Temperature [$^{\circ}$C]" ) #rotation= 270
+
+    P = ax2.contourf(newx, newy, newP, levels = levelsP)
+    ax2.set_title("Pressure Contours for a {}x{} grid".format(xg, yg))
+    ax2.set_ylabel("y")
+    Pbar = plt.colorbar(P, ax=ax2)
+    Pbar.set_label("Pressure [Pa]" ) #rotation= 270
+    plt.legend
+
+    U = ax3.contourf(newx, newy, newU, levels = levelsU)
+    ax3.set_title("X_Velocity Contours for a {}x{} grid".format(xg, yg))
+    ax3.set_xlabel("x")
+    ax3.set_ylabel("y")
+    ubar = plt.colorbar(U, ax=ax3)
+    ubar.set_label("X_Velocity [ms$^{-1}$]" ) #rotation= 270
+    plt.legend
+
+    ax1.set_ylim([0, 0.001])
+    ax2.set_ylim([0, 0.001])
+    ax3.set_ylim([0, 0.001])
+
+#Plots
+velocityProfile(y,u,i,yg)
+contours(x,y,T,P,u)
+boundarycontours(x,y,T,P,u)
+
 plt.show()
