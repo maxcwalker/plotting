@@ -44,7 +44,7 @@ ax.scatter(x,y, marker ='.')
 ax.set_ylabel('y')
 ax.set_xlabel('x')
 ax.set_title('scatter grap of {}x{} grid'.format(xg,yg))
-ax.set_ylim([0.004, 0.006])
+#ax.set_ylim([0.004, 0.006])
 ax.grid()
 #ax.set_aspect(1)
 

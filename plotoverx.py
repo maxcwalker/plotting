@@ -39,7 +39,8 @@ yg = int(len(y)/xg)
 print("The mesh is {}x{}".format(xg,yg))
 ### -------------- ###
 plt.style.use('classic')
-def varOverX(x,y,variable):
+
+def varOverX(x,y,variable,varname):
 
     y_pos = 0.01  # choose what point above the wall
     y = np.around(y, 3)
@@ -52,23 +53,28 @@ def varOverX(x,y,variable):
             variable1.append(variable[i])
 
     fig,ax = plt.subplots(1,1)
+    fig.set_size_inches(20,5)
     ax.plot(x_pos,variable1, label = 'y position {}m'.format(y_pos))
     ax.set_xlabel('X position [m]')
-    #ax.set_ylabel('Pressure [Pa]')
-    ax.set_ylabel('Velocity [ms$^{-1}$]')
+
+    if varname == 'Pressure':
+        units = 'Pa'
+    else:
+        units = 'ms$^{-1}$'
+    
+    ax.set_ylabel('{} [{}]'.format(varname, units))
     ax.set_xlabel('x [m]')
-    ax.set_title('Plot of Pressure over domain at y = {}m'.format(str(y_pos)))
+    ax.set_title('Plot of {} over domain at y = {}m'.format(varname,str(y_pos)))
     ax.legend()
     ax.grid()
+    ax.set_xlim([-0.05, 0.3])
+    plt.savefig('plot{}over.pdf'.format(varname))
 
 def boundarythick(u,y,x,xg,yg):
     newU = u.reshape(xg,yg)
     newY = y.reshape(xg,yg).T
     newX = x.reshape(xg,yg).T
     x_boundary = newX[0, :]
-    print(newU)
-    print("----------------------------")
-    print(newY)
     #max_u = np.max(u)
     #print(max_u)
 
@@ -92,6 +98,7 @@ def boundarythick(u,y,x,xg,yg):
 
    
 
-#varOverX(x,y,u)
+varOverX(x,y,u,'Velocity')
+#varOverX(x,y,P,'Pressure')
 boundarythick(u,y,x,xg,yg)
 plt.show()
