@@ -4,61 +4,32 @@ import numpy as np
 from matplotlib import pyplot as plt
 import math 
 import matplotlib.cm as cm # latex module
+from plots import readfile
 
-f = np.genfromtxt("../SU2/mach6_comp_lam_plate/restart_flow.csv", names=True, delimiter = ',')
+extr = readfile()
+x,y,rho,E,P,T,cp,mu,u,v,xg,yg,Csfx = extr.variables("../SU2/mach2_comp_lam_plate/restart_flow.csv")
 
-n = 15 # number of decimals to round values to
-x = np.around(f['x'],n )
-y = np.around(f['y'], n)
-try:
-    rho = np.around(f['Density'], decimals=n)
-except:
-    rho1 = np.around(f['Density_0'], decimals=n)
-    rho2 = np.around(f['Density_1'], decimals=n)
-    rho3 = np.around(f['Density_2'], decimals=n)
-    rho4 = np.around(f['Density_3'], decimals=n)
-    rho5 = np.around(f['Density_4'], decimals=n)
-    rhon = [rho1,rho2,rho3,rho4,rho5]
-    rho = sum(rhon)
+y_wall = []
+u_wall = []
+x_wall = []
 
-rhou = np.around(f['Momentum_x'], decimals=n)
-rhov = np.around(f['Momentum_y'], decimals=n)
-E= np.around(f['Energy'], decimals=n)
-P = np.around(f['Pressure'], decimals=n)
-try:    
-    T = np.around(f['Temperature'], decimals=n)
-except:
-    T = np.around(f['Temperature_tr'], decimals=n)
-ma = np.around(f['Mach'], decimals=n)
-cp = np.around(f['Pressure_Coefficient'], decimals=n)
-mu = np.around(f['Laminar_Viscosity'], decimals=n)
-Csfx = np.around(f['Skin_Friction_Coefficient_x'], decimals=n)
-Csfy = np.around(f['Skin_Friction_Coefficient_y'], decimals=n)
-Heat_flux = np.around(f['Heat_Flux'], decimals=n)
-y_plus = np.around(f['Y_Plus'], decimals=n)
-print(rho)
-# velocity from the momentum
-u = rhou/rho
-v = rhov/rho
-u_max = max(u)
+for i in range(len(y)):
+    if y[i] ==  0:
+        y_wall.append(y[i-1])
+        u_wall.append(u[i-1])
+        x_wall.append(x[i-1])
 
-c = 0
-for i in range(len(y_plus)):
-    if y_plus[i] != 0:
-        c += 1
-print("There are "+str(c)+" non zero y plus values.")
-
-d = 0
-for i in range(len(Csfx)):
-    if Csfx[i] != 0:
-        d += 1
-print("There are "+str(d)+" non zero y plus values.")
-
-e = 0
-for i in range(len(Csfy)):
-    if Csfy[i] != 0:
-        e += 1
-print("There are "+str(e)+" non zero y plus values.")
-
-
-
+dudy = np.array(u_wall) / np.array(y_wall)
+t_wall = mu[0]*dudy
+Cf = t_wall/(0.5*rho[0]*u[0])
+x_wall = np.array(x_wall)/0.3
+fig, ax = plt.subplots(1,1)
+plt.style.use('classic')
+ax.plot(x_wall,Cf)
+ax.set_xlim([0,1])
+ax.set_xlabel('$x/L$')
+ax.set_ylabel('$C_f$')
+ax.set_title('Coefficient of Friction')
+ax.grid()
+plt.savefig("skinFrictGraph.pdf")
+plt.show()
