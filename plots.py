@@ -6,7 +6,7 @@ import matplotlib.cm as cm # latex module
 
 
 class readfile:
-    plt.style.use('classic')
+
     def __init__(self):
         return
  
@@ -14,27 +14,17 @@ class readfile:
         self.fname = fname
         
         f = np.genfromtxt(fname, names=True, delimiter = ',')
-        x = f['x']
-        y = f['y']
+        x, y, rhou, rhov, E, P = f['x'],f['y'],f['Momentum_x'],f['Momentum_y'],f['Energy'],f['Pressure']
         try:
             rho = f['Density']
         except:
-            rho1 = f['Density_0']
-            rho2 = f['Density_1']
-            rho3 = f['Density_2']
-            rho4 = f['Density_3']
-            rho5 = f['Density_4']
+            rho1,rho2,rho3,rho4,rho5 = f['Density_0'],f['Density_1'],f['Density_2'],f['Density_3'],f['Density_4']
             rhon = [rho1,rho2,rho3,rho4,rho5]
             rho = sum(rhon)
-
-        rhou = f['Momentum_x']
-        rhov = f['Momentum_y']
-        E= f['Energy']
-        P = f['Pressure']
         try:    
             T = f['Temperature']
         except:
-            T = np.around(f['Temperature_tr'], decimals=n)
+            T = f['Temperature_tr']
         ma = f['Mach']
         cp = f['Pressure_Coefficient']
         mu = f['Laminar_Viscosity']
@@ -52,6 +42,7 @@ class readfile:
         return x,y,rho,E,P,T,cp,mu,u,v,xg,yg,Csfx
 
 class plotoverx:
+
     def __init__(self):
         print("initialise")
         return
@@ -79,8 +70,14 @@ class plotoverx:
 
         if varname == 'Pressure':
             units = 'Pa'
-        else:
+        elif varname == 'Velocity':
             units = 'ms$^{-1}$'
+        elif varname == 'Temperature':
+            units == 'K'
+        else:
+            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+            print("This varaible has not been assigned yet")
+            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         
         ax.set_ylabel('{} [{}]'.format(varname, units))
         ax.set_xlabel('x [m]')
@@ -88,7 +85,8 @@ class plotoverx:
         ax.legend()
         ax.grid()
         ax.set_xlim([-0.05, 0.3])
-        plt.savefig('plots/plot{}over.pdf'.format(varname))
+        plt.savefig('figures/plot{}over.pdf'.format(varname))
+        return
 
     def boundarythick(self,u,y,x,xg,yg):
         self.u = u
@@ -121,9 +119,11 @@ class plotoverx:
         ax1.set_ylim(0)
         ax1.set_xlim([min(x), 0.3])
         ax1.grid()
-        plt.savefig("plots/boundarythickness.pdf")
+        plt.savefig("figures/boundarythickness.pdf")
+        return
 
 class contours:
+
     def __init__(self):
         return
 
@@ -142,9 +142,9 @@ class contours:
         newP = P.reshape(xg,int(len(x)/xg))
         newU = u.reshape(xg,int(len(x)/xg))
 
-        levelsT = np.linspace(min(T),max(T),1000)
-        levelsP = np.linspace(min(P),max(P),1000)
-        levelsU = np.linspace(0,max(u),1000)
+        levelsT = 100 #np.linspace(min(T),max(T),1000)
+        levelsP = 100 #np.linspace(min(P),max(P),1000)
+        levelsU = 100 #np.linspace(0,max(u),1000)
 
         fig, (ax1,ax2, ax3) = plt.subplots(3,1)
         fig.set_size_inches(18.5, 10.5)
@@ -172,7 +172,8 @@ class contours:
         ax1.set_aspect(1)
         ax2.set_aspect(1)
         ax3.set_aspect(1)
-        plt.savefig("plots/contours.pdf")
+        plt.savefig("figures/contours.pdf")
+        return
 
     def boundarycontours(self, x,y,T,P,u,xg,yg):
         self.x = x
@@ -189,9 +190,9 @@ class contours:
         newP = P.reshape(xg,int(len(x)/xg))
         newU = u.reshape(xg,int(len(x)/xg))
 
-        levelsT = np.linspace(200,550,1000)
-        levelsP = np.linspace(95000,122000,1000)
-        levelsU = np.linspace(0,800,1000)
+        levelsT = 100 #np.linspace(min(T),max(T),1000)
+        levelsP = 100 #np.linspace(min(P),max(P),1000)
+        levelsU = 100 #np.linspace(0,max(u),1000)
 
         fig, (ax1,ax2, ax3) = plt.subplots(3,1)
         fig.set_size_inches(18.5, 10.5)
@@ -220,9 +221,12 @@ class contours:
         ax1.set_ylim([0, 0.001])
         ax2.set_ylim([0, 0.001])
         ax3.set_ylim([0, 0.001])
-        plt.savefig("plots/boundarycontours.pdf")
+        #plt.savefig("figures/boundarycontours.pdf")
+        plt.show()
+        return
 
 class boundary:
+
     def __init__(self):
         return
     
@@ -354,7 +358,6 @@ class boundary:
         ######################################################################
         ######################################################################
 
-
         #plotting the velocity profile [non dimensional]
         fig, ax1 = plt.subplots(1,1)
         ax1.plot( ub5_nondim, yb5_nondim, marker='x', color = 'green', label = '{}{} along plate'.format(pos5,"%"))
@@ -368,7 +371,8 @@ class boundary:
         ax1.set_ylabel("$y/\delta$")
         ax1.set_title("Laminar Boundary layer at several points along the plate")
         ax1.grid()
-        plt.savefig("plots/nondimboundarymultiple.pdf")
+        plt.savefig("figures/nondimboundarymultiple.pdf")
+        return
 
     def boundary(self,x,y,yg,xg,u):
         self.x = x
@@ -400,4 +404,138 @@ class boundary:
         ax2.set_xlabel("$u/U_\infty$")
         ax2.set_ylabel("$y/\delta$")
         ax2.grid()
-        plt.savefig("plots/nondimboundary.pdf")
+        plt.savefig("figures/nondimboundary.pdf")
+        return
+
+    def skinFrict(self,x,y,u,rho,mu):
+        self.x = x
+        self.y = y
+        self.u = u
+        self.rho = rho
+        self.mu = mu
+
+        y_wall = []
+        u_wall = []
+        x_wall = []
+
+        for i in range(len(y)):
+            if y[i] ==  0:
+                y_wall.append(y[i-1])
+                u_wall.append(u[i-1])
+                x_wall.append(x[i-1])
+
+        dudy = np.array(u_wall) / np.array(y_wall)
+        t_wall = mu[0]*dudy
+        Cf = t_wall/(0.5*rho[0]*u[0])
+        x_wall = np.array(x_wall)/0.3
+        fig, ax = plt.subplots(1,1)
+        plt.style.use('classic')
+        ax.plot(x_wall,Cf)
+        ax.set_xlim([0,1])
+        ax.set_xlabel('$x/L$')
+        ax.set_ylabel('$C_f$')
+        ax.set_title('Coefficient of Friction')
+        ax.grid()
+        plt.savefig("figures/skinFrictGraph.pdf")
+        return
+    
+    def blasius(self,x,y,u,mu,yg):
+        col_begin = []
+
+        for i in range(len(y)):
+            if y[i] == max(y):
+                col_begin.append(i)
+
+        pos = 55
+        i1 = col_begin[pos]
+        i2 = col_begin[pos]+yg
+
+        x, y_su2, u = x[i1:i2], y[i1:i2], u[i1:i2]
+        u_norm_su2 = u/u[0]
+
+        eta_su2 = y_su2* np.sqrt(u[0]/(mu[0]*x))
+
+        #####################################################################################
+        #####################################################################################
+
+        # -------------------------------------------------------------------------
+        #
+        # -1- Equation de Blasius f''' + f f'' = 0
+        #
+        #           dudt(t) = v(t)
+        #           dvdt(t) = w(t)
+        #           dwdt(t) = -u(t)*w(t) 
+        # 
+        #
+        
+        def f(u):
+            dudt =   u[1]
+            dvdt =   u[2] 
+            dwdt = - u[0] * u[2]  
+            return np.array([dudt,dvdt,dwdt])
+            
+        # -------------------------------------------------------------------------    
+        #
+        # -2- Schema de Runge-Kutta classique d'ordre 4
+        # 
+        
+        def rungekutta(a,h):
+            imax = int(5/h)
+            X = np.arange(imax+1)*h
+            U = np.zeros((imax+1,3)); U[0,:] = [0,0,a]
+            for i in range(imax):  
+                K1 = f(U[i,:]       )
+                K2 = f(U[i,:]+K1*h/2)
+                K3 = f(U[i,:]+K2*h/2)
+                K4 = f(U[i,:]+K3*h  )
+                U[i+1,:] = U[i,:] + h*(K1+2*K2+2*K3+K4)/6     
+            return X,U
+        
+        # -------------------------------------------------------------------------    
+        #
+        # -3- Methode de bissection 
+        # 
+        
+        def shoot(a,h):
+            X,U = rungekutta(a,h)
+            return (1.0-U[-1,1])
+        
+        def blasius(h,tol):
+            n = 1; nmax = 40
+            a = 0; fa = shoot(a,h)
+            b = 1; fb = shoot(b,h)
+            n = 0; delta = (b-a)/2
+            if (fa*fb > 0) :
+                raise RuntimeError('Bad initial interval') 
+            while (abs(delta) >= tol and n <= nmax) :
+                delta = (b-a)/2; n = n + 1;
+                x = a + delta; fx = shoot(x,h)
+                print(" x = %14.7e (Estimated error %13.7e at iteration %d)" % (x,abs(delta),n))
+                if (fx*fa > 0) :
+                    a = x;  fa = fx
+                else :
+                    b = x;  fb = fx
+            if (n > nmax) :
+                raise RuntimeError('Too much iterations') 
+            return x
+            
+        h   = 0.1
+        tol = 1e-7
+        a = blasius(h,tol)
+        X,U = rungekutta(a,h)
+        
+        
+        print(" ============ Final value for f''(0) = %.4f " % U[0,2])
+        
+        #######################################################################################
+        #######################################################################################
+
+        fig, ax = plt.subplots(1,1)
+        ax.plot(U[:,1],X,'-r',label='blasius')
+        ax.plot(u_norm_su2, eta_su2, marker='.',color='purple', label = 'SU2')
+        ax.set_title('Velocity profile comparison for a Laminar Flat Plate')
+        ax.set_xlabel('$u/U_e$')
+        ax.set_ylabel('$\eta$')
+        ax.legend()
+        ax.set_ylim([0,10])
+        plt.savefig("figures/blasius.pdf")
