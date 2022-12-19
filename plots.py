@@ -3,8 +3,6 @@ from matplotlib import pyplot as plt
 import math 
 import matplotlib.cm as cm # latex module
 
-
-
 class readfile:
 
     def __init__(self):
@@ -86,6 +84,7 @@ class plotoverx:
         ax.grid()
         ax.set_xlim([-0.05, 0.3])
         plt.savefig('figures/plot{}over.pdf'.format(varname))
+        plt.show()
         return
 
     def boundarythick(self,u,y,x,xg,yg):
@@ -523,7 +522,6 @@ class boundary:
         tol = 1e-7
         a = blasius(h,tol)
         X,U = rungekutta(a,h)
-        
         
         print(" ============ Final value for f''(0) = %.4f " % U[0,2])
         
