@@ -84,7 +84,6 @@ class plotoverx:
         ax.grid()
         ax.set_xlim([-0.05, 0.3])
         plt.savefig('figures/plot{}over.pdf'.format(varname))
-        plt.show()
         return
 
     def boundarythick(self,u,y,x,xg,yg):
@@ -104,7 +103,7 @@ class plotoverx:
         y_boundary = []
         for i in range(xg):
             for j in range(yg):
-                if newU[j,i] <= 0.99*686 or j==64:
+                if newU[j,i] <= 0.99*u[0] or j==(yg-1):
                     y_boundary.append(newY[j,i])
                     break
 
@@ -220,8 +219,7 @@ class contours:
         ax1.set_ylim([0, 0.001])
         ax2.set_ylim([0, 0.001])
         ax3.set_ylim([0, 0.001])
-        #plt.savefig("figures/boundarycontours.pdf")
-        plt.show()
+        plt.savefig("figures/boundarycontours.pdf")
         return
 
 class boundary:
@@ -537,3 +535,19 @@ class boundary:
         ax.legend()
         ax.set_ylim([0,10])
         plt.savefig("figures/blasius.pdf")
+
+class grid:
+
+    def __init__(self):
+        return
+
+    def meshplolt(self,x,y):
+        self.x = x
+        self.y = y
+
+        fig, ax = plt.subplots(1,1)
+        ax.scatter(x,y,marker='.')
+        ax.set_xlabel('x')
+        ax.set_ylabel('y')
+        ax.set_title('Scatter graph to show mesh of domain')
+        plt.savefig("figures/meshplot.pdf")
