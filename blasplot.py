@@ -87,7 +87,7 @@ def blasius(h,tol):
     else :
       b = x;  fb = fx
   if (n > nmax) :
-    raise RuntimeError('Too much iterations') 
+    raise RuntimeError('Too many iterations') 
   return x
 
 h   = 0.1
