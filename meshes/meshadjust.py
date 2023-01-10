@@ -8,7 +8,6 @@ import numpy as np
 with open("./grid.txt") as f:
     lines = f.readlines()
 
-# 
 for i in range(len(lines)):
     if lines[i][0:2] == "NP":
         print(lines[i])
@@ -42,9 +41,19 @@ print("This is c = "+str(c))
 print(lines[c])
 lines2 = lines[c:len(lines)]
 
+for i in lines2:
+    if lines2[i] == 'MARKER_TAG= outlet':
+        lines2[i].replace("outlet", "inlet")
+
+for i in lines2:
+    if lines2[i] == 'MARKER_TAG= inlet':
+        lines2[i].replace("inlet", "outlet")
+
+## need to do something smart here to split and join and remove
 points = points[::-1]
+
 #########################################################
-'''
+## This is to grab the numbers of the points which isnt needed as the numbering is implied by the order of coordinates
 coords =[]
 numbers = []
 for i in range(len(points)):
@@ -53,9 +62,6 @@ for i in range(len(points)):
 
 numbers = numbers[::-1]
 print(str(coords[1])+str(numbers[1]))
-'''
-
-
 
 #########################################################
 
@@ -65,11 +71,12 @@ for i in range(a+1):
     f.write(str(lines[i]))
 
 for i in range(len(points)):
-    f.write(str(points[i]))
-    #f.write(str(coords[i])+str(numbers[i]))
+    #f.write(str(points[i]))
+    f.write(str(coords[i])) # removed +str(numbers[i]) as the numbers of the elements is already implied by the ordering
 
 for i in range(len(lines2)):
     f.write(lines2[i])
+
 
 f.close()
 
@@ -77,14 +84,12 @@ f.close()
 with open("grid1.txt") as f:
     lines4 = f.readlines()
 
-print(len(lines))
-
-"""
-for i in range(len(lines)):
-    if lines[i] == "% Node coordinates":
-        print("The line is "+str(i))
+for i in range(len(lines4)):
+    if lines4[i] == 'MARKER_TAG= outlet':
+        lines4[i].replace("outlet", "inlet")
 
 for i in range(len(lines4)):
-    if lines4[i] == "% Node coordinates ":
-        print("The line is "+str(i))
-"""
+    if lines4[i] == 'MARKER_TAG= inlet':
+        lines4[i].replace("inlet", "outlet")
+
+f.close()
