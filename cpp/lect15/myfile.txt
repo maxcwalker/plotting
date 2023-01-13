@@ -1,0 +1,2 @@
+We can now print to the file f using fprintf
+For example, a number 1 and 2 and 42.
