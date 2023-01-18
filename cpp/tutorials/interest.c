@@ -12,9 +12,9 @@ int main()
     {
         interest = (debt*rate);
         debt = debt + interest;
+        interest_cumulative =
 
         printf("month %2d : debt = £%7.2f, interest = £%.2f\n",month, debt, interest);
     }
     return 0;
-
 }

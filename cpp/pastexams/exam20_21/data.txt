@@ -1,0 +1,5 @@
+Alabama 795 0   125 9
+Alaska  122 0   164 4
+Arizona 102 0   123 11
+Arkansas    394 0   647 6
+California  785 55  483 0

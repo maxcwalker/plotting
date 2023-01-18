@@ -3,7 +3,7 @@
 /* function prototype */
 //long string_length(char s[]);
 
-int string_length(char s)
+int string_length()
 {
     char c;
     int nc = 0;// number of characters
@@ -25,5 +25,3 @@ int main(void){
     printf("%20ld | %s\n", string_length(s3), s3);
     return 0;
 }
-
-
