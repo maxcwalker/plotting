@@ -3,7 +3,7 @@
 #include<math.h>
 
 typedef struct{
-    char state[15]; // state name
+    char state[100]; // state name
     long dempv; // democrats popular votes
     long demev; // democrats electoral votes
     long reppv; // republicans popular votesv
@@ -31,20 +31,18 @@ int count_lines(char s[]){
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 
-void initialise_votes(char s[],votes arr , int n){
+void initialise_votes(char s[], votes **arr , int n){
     FILE *f;
     if ((f = fopen(s,"r")) == NULL){
         printf("Cannot open %s for reading.\n",s);
     }
 
-    // votes *arr
-    // arr = (votes *)malloc(sizeof(votes)*n);
-    char x1[15];
-    long x2,x3,x4,x5;
-    int i=0;
+    for(int i=0; i<5; i++){
+        fscanf(f, "%s\t%f\t%f\t%f\t%f", (arr+i)->state, (arr+i)->dempv, (arr+i)->demev, (arr+i)->reppv, (arr+i)->repev);
+    }
 
-    while (fscanf(f, "%s\t%lf\t%lf\t%lf\t%lf", &arr.state, &arr.dempv, &arr.demev, &arr.reppv, &arr.repev) == 5){
-        i++;
+    while (fscanf(f, "%s\t%lf\t%lf\t%lf\t%lf", &arr->state, &arr->dempv, &arr->demev, &arr->reppv, &arr->repev) == 5){
+        arr++;
     }
 }
 
@@ -52,19 +50,20 @@ void initialise_votes(char s[],votes arr , int n){
 ////////////////////////////////////////////////////////////////////////////////////
 
 int main(){
-    
     char filename[] = "data.txt";
     int nlines = count_lines(filename);
     
     printf("%d\n",nlines);
 
-    votes **arr;
-    arr = (votes **)malloc(sizeof(votes *));
-    //for (int i=0; i<nlines; i++){
-    //     arr[i] = (votes *)malloc(sizeof(votes));
-    // }
+    votes *arr;
+    arr = (votes *)malloc(sizeof(votes)*nlines);
 
-    initialise_votes(filename,&arr,nlines);
+    for (int i=0; i<nlines; i++){
+        arr = (votes *)malloc(sizeof(votes));
+        arr++;
+    }
+    
+    initialise_votes(filename,*arr,nlines);
 
     printf("%s",arr->state[0]);
 }
