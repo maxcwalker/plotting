@@ -19,9 +19,9 @@ int count_lines(char s[]){
         printf("Cannot open %s for reading.\n",s);
         return -1;
     }
-    char x1[15];
-    long x2,x3,x4,x5;
-    while (fscanf(f,"%s\t%lf\t%lf\t%lf\t%lf",&x1, &x2, &x3, &x4, &x5) == 5){
+    char x1[100];
+    int x2,x3,x4,x5;
+    while (fscanf(f,"%s\t%d\t%d\t%d\t%d",x1, &x2, &x3, &x4, &x5) == 5){
         counter++;
     }
     
@@ -63,14 +63,13 @@ void initialise_votes(char s[], votes *arr, int n){
 
 void print_list(votes *arr, int n){
     for (int i=0; i<n; i++){
-        printf("%s\t%d\t%d\t%d\t%d\n",(arr+i)->state,(arr+i)->dempv,(arr+i)->demev,(arr+i)->reppv,(arr+i)->repev);
+        printf("%s\t%ld\t%ld\t%ld\t%ld\n",(arr+i)->state,(arr+i)->dempv,(arr+i)->demev,(arr+i)->reppv,(arr+i)->repev);
 
     }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
-
 
 votes print_vote_state(votes *arr, int n){
     // 2 dempv and 4 repve are the popular votes fyi
@@ -102,7 +101,33 @@ votes print_vote_state(votes *arr, int n){
 
    return ret;
 }
+=
+char * print_vote_total(votes *arr, int n){
+    int dempvT, demevT, reppvT, repevT;
 
+    for(int i=0; i<n; i++){
+        dempvT += (arr+i)->dempv;
+        demevT += (arr+i)->demev;
+        reppvT += (arr+i)->reppv;
+        repevT += (arr+i)->repev;
+    }
+    printf("Dem. pop. vote total: %d",dempvT);
+    printf("Dem. el. vote total: %d",demevT);
+    printf("Rep. pop. vote total: %d",reppvT);
+    printf("Rep. el. vote total: %d",repevT);
+
+
+    if (demevT > dempvT){
+        return "Dem. Wins";
+    }
+    else if (demevT<dempvT){
+        return "Rep. Win";
+    }
+    else {
+        return "Draw";
+    }
+
+}
 
 
 
@@ -128,5 +153,5 @@ int main(){
 
     votes maxstate = print_vote_state(arr, nlines);
 
-    //printf("%s\n", maxstate.state);
+    printf("%s\n", maxstate.state);
 }
