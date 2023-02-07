@@ -1,0 +1,549 @@
+﻿ResponseId,MainBranch,Country,LanguageHaveWorkedWith,OpSysProfessional use
+1,None of these,NA,NA,NA
+2,I am a developer by profession,Canada,JavaScript;TypeScript,macOS
+4,I am a developer by profession,Israel,C#;JavaScript;SQL;TypeScript,Windows
+5,I am a developer by profession,United States of America,C#;HTML/CSS;JavaScript;SQL;Swift;TypeScript,Windows
+7,I code primarily as a hobby,India,C++;HTML/CSS;JavaScript;PHP;Python;TypeScript,macOS
+8,I am a developer by profession,India,C;C++;HTML/CSS;Java;JavaScript;SQL,Linux-based;macOS
+9,I am a developer by profession,Netherlands,NA,Windows
+10,I am a developer by profession,Croatia,Delphi;Java;Swift,Windows
+11,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Bash/Shell;C#;HTML/CSS;JavaScript;PowerShell;SQL,Windows;Windows Subsystem for Linux (WSL)
+13,I am a developer by profession,United States of America,C;HTML/CSS;Rust;SQL;Swift;TypeScript,macOS
+14,I am a developer by profession,Australia,Elixir;Erlang;HTML/CSS;JavaScript;Ruby;SQL;TypeScript,macOS
+15,I am a developer by profession,United States of America,HTML/CSS;JavaScript;PHP;Python;R;Ruby;Scala,macOS
+16,I am a developer by profession,Russian Federation,Bash/Shell;HTML/CSS;JavaScript;SQL;TypeScript,Windows
+17,I am a developer by profession,Czech Republic,C#;Java;PHP;Python;R,Windows
+18,I am a developer by profession,Austria,Python;SQL,macOS
+19,I am a developer by profession,Austria,C#;PowerShell;SQL,Windows
+20,I am learning to code,Serbia,C++;HTML/CSS;Java;JavaScript;Python,Linux-based;Windows
+21,I am a developer by profession,Austria,Bash/Shell;C#;HTML/CSS;Java;JavaScript;PowerShell;SQL;TypeScript,Linux-based;macOS
+22,I am a developer by profession,Italy,Python;SQL;TypeScript,Windows Subsystem for Linux (WSL)
+23,I am a developer by profession,Canada,C#;SQL;TypeScript,Windows
+25,I am a developer by profession,Israel,C#;C++;JavaScript;PHP;TypeScript,Windows
+26,I am a developer by profession,Germany,Dart;Go;Java;Kotlin;Swift;TypeScript,macOS
+27,I am a developer by profession,United States of America,Bash/Shell;Groovy;HTML/CSS;Java;JavaScript;SQL,macOS
+28,I am a developer by profession,Israel,C#;HTML/CSS;JavaScript;Rust;TypeScript,Windows
+29,I am a developer by profession,United States of America,C;C++,Windows
+30,I am a developer by profession,Ireland,C#;JavaScript;PowerShell;SQL,Windows;Windows Subsystem for Linux (WSL)
+31,None of these,NA,NA,NA
+32,I am a developer by profession,United States of America,C#;HTML/CSS;JavaScript;SQL,Windows
+35,I am a developer by profession,Poland,HTML/CSS;JavaScript;Python;SQL;TypeScript,Linux-based
+38,I am a developer by profession,Israel,HTML/CSS;JavaScript;PHP;Python;Ruby,macOS
+39,I code primarily as a hobby,Slovenia,HTML/CSS;JavaScript;Python;SQL,Linux-based
+40,I am a developer by profession,Czech Republic,Bash/Shell;Groovy;HTML/CSS;Java;JavaScript;Perl;PHP;Scala;SQL,Linux-based
+41,I am a developer by profession,United States of America,C#;C++;HTML/CSS;JavaScript;SQL;TypeScript;VBA,
+42,I am a developer by profession,Israel,Bash/Shell;HTML/CSS;Python;SQL,Linux-based
+43,I am a developer by profession,Iraq,C#;HTML/CSS;JavaScript;PHP;Ruby;SQL,Linux-based;Windows
+44,I code primarily as a hobby,Sweden,NA,Linux-based
+45,I am a developer by profession,Austria,Bash/Shell;HTML/CSS;Java;JavaScript;Kotlin;Python;R;SQL,Windows
+47,I code primarily as a hobby,Norway,Bash/Shell;C;C++;Java;Lua;Python,Linux-based
+48,I am a developer by profession,United States of America,Java;JavaScript;PHP;SQL;TypeScript,macOS
+49,I am a developer by profession,Germany,Haskell;Java;Rust,Windows;Windows Subsystem for Linux (WSL)
+50,I am a developer by profession,Germany,C#;HTML/CSS;JavaScript;SQL;TypeScript,Linux-based
+52,I am a developer by profession,Poland,Bash/Shell;HTML/CSS;Java;JavaScript;Python;Rust;SQL,macOS
+53,I am a developer by profession,Czech Republic,Bash/Shell;Go;Java;Python,macOS
+54,I am a developer by profession,United States of America,C#;HTML/CSS;JavaScript;SQL;TypeScript,Windows
+55,I am a developer by profession,Norway,Bash/Shell;C#;HTML/CSS;Java;JavaScript;LISP;PowerShell;SQL,Linux-based;macOS
+56,I am a developer by profession,United States of America,C#;HTML/CSS;Java;JavaScript;Python;SQL;TypeScript,Windows
+57,I am a developer by profession,Taiwan,C++,Linux-based;Windows Subsystem for Linux (WSL)
+58,I am a developer by profession,Netherlands,Bash/Shell;C#;HTML/CSS;PowerShell;SQL;TypeScript,Linux-based;Windows;Windows Subsystem for Linux (WSL)
+59,I am a developer by profession,Hong Kong (S.A.R.),Dart;HTML/CSS;Java;Kotlin;Python,macOS
+60,I am a developer by profession,Germany,Assembly;Bash/Shell;C;HTML/CSS;JavaScript;PHP;Python;SQL,Linux-based;Windows;Windows Subsystem for Linux (WSL)
+61,I am a developer by profession,Canada,Bash/Shell;C#;C++;HTML/CSS;Java;JavaScript;Kotlin;Python;Rust;TypeScript,Linux-based
+62,I code primarily as a hobby,Mexico,Bash/Shell;HTML/CSS;Python,Linux-based
+63,I am a developer by profession,France,Groovy;Java;Kotlin,Linux-based
+64,I am a developer by profession,United States of America,Bash/Shell;C;Go;HTML/CSS;Java;JavaScript;Python;Swift;TypeScript,macOS
+65,I am a developer by profession,France,C;C#;HTML/CSS;Java;JavaScript;PHP;R,Windows;Windows Subsystem for Linux (WSL)
+66,I am a developer by profession,India,C#,Windows
+67,I am a developer by profession,Brazil,C;C++;Delphi;HTML/CSS;Java;JavaScript,Windows
+68,I am a developer by profession,Australia,C#;HTML/CSS;JavaScript;PHP;SQL,Linux-based;macOS;Windows
+69,I am a developer by profession,Lithuania,C++;HTML/CSS;JavaScript;PHP;PowerShell;Python;SQL;TypeScript,Linux-based;Windows;Windows Subsystem for Linux (WSL)
+70,I am a developer by profession,Uruguay,Bash/Shell;HTML/CSS;Java;JavaScript;SQL;TypeScript,Linux-based
+72,I am a developer by profession,Poland,Bash/Shell;C;F#;Groovy;JavaScript;Python,Linux-based;Windows
+74,I am a developer by profession,Germany,Bash/Shell;HTML/CSS;JavaScript;PowerShell;Python;SQL,Linux-based;Windows
+75,I am a developer by profession,Sweden,C#;HTML/CSS;SQL;TypeScript,Windows
+76,I am a developer by profession,Germany,Groovy;Java;Ruby,macOS
+77,I am a developer by profession,United States of America,C#;JavaScript;Python;SQL,Windows;Windows Subsystem for Linux (WSL)
+79,I am a developer by profession,Serbia,HTML/CSS;JavaScript;PHP,macOS
+80,I am a developer by profession,France,Bash/Shell;Clojure;Java;JavaScript;SQL,Linux-based
+81,I am a developer by profession,Denmark,Delphi,Windows
+82,I am learning to code,Netherlands,Bash/Shell;HTML/CSS;JavaScript,Windows
+83,I am a developer by profession,Germany,Java;R,Linux-based
+85,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,HTML/CSS;JavaScript;PowerShell;TypeScript,Windows
+86,I am a developer by profession,United States of America,Bash/Shell;Java;Python;SQL,Linux-based;Windows
+87,None of these,NA,NA,NA
+88,I am a developer by profession,Spain,Bash/Shell;C#;Groovy;HTML/CSS;JavaScript,Windows
+89,I am a developer by profession,Germany,HTML/CSS;TypeScript,macOS
+90,I am a developer by profession,Sweden,C#;C++;PowerShell;Python,Windows
+92,I am a developer by profession,France,C#;C++;Delphi;JavaScript,Windows
+93,I am a developer by profession,Israel,Bash/Shell;C++;Go;HTML/CSS;Python;R,Linux-based
+94,I am a developer by profession,United States of America,Bash/Shell;HTML/CSS;JavaScript;PHP;TypeScript,macOS
+95,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Python;R,Linux-based
+96,I am a developer by profession,United States of America,Bash/Shell;C;C++;Python,Linux-based;Windows
+97,I am a developer by profession,Israel,Go;HTML/CSS;JavaScript;Ruby;Rust;SQL,Linux-based
+98,I am a developer by profession,United States of America,C#;HTML/CSS;Java;JavaScript;Python;SQL;VBA,Linux-based;Windows
+99,I am a developer by profession,Egypt,Swift,macOS;Windows
+100,I am a developer by profession,Turkey,C;C++;HTML/CSS;Java;JavaScript;MATLAB;Python;SQL,Linux-based
+101,I code primarily as a hobby,South Africa,APL;C++;Python,Linux-based
+102,I am a developer by profession,Germany,HTML/CSS;Java;JavaScript;PHP;SQL;TypeScript,macOS
+103,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,C#;Python;SQL,Windows
+104,I am a developer by profession,United States of America,JavaScript;SQL,macOS;Windows
+105,I am a developer by profession,Israel,C#;JavaScript;SQL,Windows
+106,I am a developer by profession,Italy,Go;HTML/CSS;JavaScript;SQL;TypeScript,Linux-based;macOS
+108,I am a developer by profession,United States of America,Python;SQL;VBA,Windows
+109,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,C#;HTML/CSS;JavaScript;SQL,Windows
+110,I am a developer by profession,Spain,C#;JavaScript;Kotlin;PowerShell;Rust;TypeScript,Linux-based;Windows;Windows Subsystem for Linux (WSL)
+111,I am learning to code,Ukraine,Go,Linux-based
+112,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,C#;HTML/CSS;JavaScript;PowerShell;SQL,Windows
+113,I am a developer by profession,Poland,Bash/Shell;PHP;Python;TypeScript,Windows;Windows Subsystem for Linux (WSL)
+114,I am a developer by profession,United States of America,Bash/Shell;HTML/CSS;JavaScript;PHP;R;SQL,Windows
+115,I am a developer by profession,Uruguay,Groovy;Java;JavaScript;SQL,Windows;Windows Subsystem for Linux (WSL)
+116,I am a developer by profession,United States of America,Java;Python;SQL,Windows
+117,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,HTML/CSS;Java;JavaScript;Python,Linux-based
+118,I am a developer by profession,United States of America,C#,Linux-based;Windows
+119,I am learning to code,Denmark,HTML/CSS;JavaScript;SQL,Windows
+120,I am a developer by profession,Finland,Bash/Shell;C;C#;JavaScript;Perl;PowerShell;Python;R;Ruby;SQL,Windows;Windows Subsystem for Linux (WSL)
+121,I am a developer by profession,Canada,HTML/CSS;Java;Kotlin;SQL;TypeScript,Linux-based
+122,I am a developer by profession,Sweden,Go;Java;Python,macOS
+123,I am a developer by profession,Romania,HTML/CSS;JavaScript;PHP;Ruby;SQL;TypeScript,Windows Subsystem for Linux (WSL)
+125,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Go;JavaScript;Python;Rust;SQL;TypeScript,macOS
+126,I am a developer by profession,Israel,Assembly;C;C#;C++;Groovy;Python,Windows;Windows Subsystem for Linux (WSL)
+127,I am a developer by profession,Canada,JavaScript;Python;SQL,Linux-based;Windows
+128,I am a developer by profession,Brazil,HTML/CSS;JavaScript;PHP;Python;SQL,Linux-based;Windows;Windows Subsystem for Linux (WSL)
+129,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,C#;Python,Windows
+130,I am learning to code,Portugal,Bash/Shell;C;C++;Python;Rust,Linux-based
+131,I am a developer by profession,Italy,HTML/CSS;Java;JavaScript;Perl;PHP;Python;SQL,Linux-based
+132,I am a developer by profession,United States of America,Bash/Shell;Go;JavaScript;Python;TypeScript,Linux-based
+133,I am a developer by profession,United States of America,C#;HTML/CSS;JavaScript;PowerShell;TypeScript,Windows
+134,I am a developer by profession,United States of America,C#;JavaScript;Perl;Python;Ruby;SQL,Linux-based;macOS
+135,I am a developer by profession,Brazil,HTML/CSS;JavaScript;TypeScript,Windows Subsystem for Linux (WSL)
+136,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Bash/Shell;C;C++;Erlang;Go;Java;Python,macOS
+137,I code primarily as a hobby,United States of America,C#;C++,Linux-based;Windows
+138,I am a developer by profession,Netherlands,Java;Kotlin;Ruby,Linux-based
+139,I am a developer by profession,Israel,PHP;Python;Scala,macOS
+140,I am learning to code,United States of America,C#;C++;Java;JavaScript;LISP;Python,Linux-based;macOS
+141,I am a developer by profession,India,HTML/CSS;JavaScript;Kotlin;TypeScript,Windows
+142,I am a developer by profession,Sweden,C#;HTML/CSS;Java;JavaScript;TypeScript,Windows
+143,I am a developer by profession,Singapore,C++;Julia;Python;Rust,Linux-based
+144,I am a developer by profession,Uruguay,Bash/Shell;HTML/CSS;JavaScript;Python;Ruby;SQL,Linux-based;macOS
+145,I am a developer by profession,Canada,Delphi;LISP;SQL,Windows
+146,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Bash/Shell;C++;Go;Java;JavaScript;PHP;Rust;SQL;TypeScript,macOS
+147,None of these,NA,NA,NA
+148,I am a developer by profession,Austria,Java;JavaScript;Rust,Linux-based;macOS
+149,I am a developer by profession,France,HTML/CSS;Java;JavaScript;Python;SQL;TypeScript,macOS
+150,I am a developer by profession,Turkey,C#;HTML/CSS;SQL;TypeScript,Windows
+151,I am a developer by profession,Portugal,Python,Windows;Windows Subsystem for Linux (WSL)
+152,I am a developer by profession,India,Bash/Shell;HTML/CSS;Java;JavaScript;Python;SQL,Linux-based;Windows
+153,I am a developer by profession,Oman,C;C#;C++;Dart;Java;JavaScript;Kotlin;PHP;Python;Swift,Linux-based;macOS;Windows
+154,I am a developer by profession,United States of America,Go;HTML/CSS;Java;JavaScript;Python;SQL,Linux-based;macOS;Windows
+156,I am a developer by profession,United States of America,C++;Go;Java;JavaScript;SQL;TypeScript,macOS
+157,I am a developer by profession,Belgium,C#;HTML/CSS;JavaScript;TypeScript,Linux-based;Windows;Windows Subsystem for Linux (WSL)
+158,I am learning to code,Chile,HTML/CSS;JavaScript,macOS
+159,I am a developer by profession,Germany,Bash/Shell;Groovy;TypeScript,Linux-based
+160,I am a developer by profession,Bulgaria,C#;HTML/CSS;JavaScript;TypeScript,Windows;Windows Subsystem for Linux (WSL)
+161,I am a developer by profession,Netherlands,Bash/Shell;C#;HTML/CSS;JavaScript;PowerShell;Python,Windows
+162,I am a developer by profession,Germany,Python,Linux-based
+163,I am learning to code,India,Bash/Shell;Python,macOS
+164,I am a developer by profession,Ireland,Java;Python;Ruby;SQL,Linux-based
+165,I am a developer by profession,United States of America,C#;JavaScript;Kotlin;SQL,macOS
+166,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Go;Groovy;Java;Python,macOS
+167,I am learning to code,Romania,Bash/Shell;C++;Dart;Go;HTML/CSS;JavaScript;Python;SQL;TypeScript,Linux-based
+168,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Bash/Shell;C++;HTML/CSS;JavaScript;Python;R;TypeScript,Windows;Windows Subsystem for Linux (WSL)
+169,I am a developer by profession,United States of America,HTML/CSS;JavaScript;Python;R;SQL;TypeScript,macOS
+170,I am a developer by profession,India,Assembly;C;C++,Windows
+171,I am a developer by profession,United States of America,Java;Python;TypeScript,macOS
+172,I am a developer by profession,United States of America,Bash/Shell;C;Python,Linux-based;Windows;Windows Subsystem for Linux (WSL)
+173,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,C++;Python,macOS
+175,I am a developer by profession,Italy,Assembly;Bash/Shell;C;HTML/CSS;Java;JavaScript;Python;SQL,Linux-based;Windows
+177,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,C;C++;Dart;Go;Java;JavaScript;Kotlin;Python;Rust;TypeScript,
+179,I am a developer by profession,Poland,Bash/Shell;C++;HTML/CSS;Java;PHP;Python;SQL,Linux-based;Windows Subsystem for Linux (WSL)
+180,I am a developer by profession,India,Go;Java;Ruby,Linux-based;Windows;Windows Subsystem for Linux (WSL)
+181,I am a developer by profession,United States of America,C;C#;C++;Java;JavaScript;Perl;PHP;PowerShell;SQL;TypeScript;VBA,Windows
+182,I am a developer by profession,Brazil,Java;Kotlin;Python;SQL,Linux-based
+184,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Go;Java;Python;SQL,Linux-based;macOS
+186,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,C++;Go;Groovy;Java;JavaScript;PHP;Python;SQL,macOS
+187,I am a developer by profession,Germany,Bash/Shell;C;Erlang;Python;Rust;SQL,Linux-based
+188,I am a developer by profession,Germany,Delphi;SQL,Windows
+189,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Bash/Shell;HTML/CSS;JavaScript;PHP;SQL;TypeScript,macOS
+190,I am a developer by profession,Israel,Go,macOS
+191,None of these,NA,NA,NA
+192,I am a developer by profession,Greece,C#;HTML/CSS;JavaScript;SQL,Windows
+193,I am a developer by profession,United States of America,Clojure;Java;Rust,Linux-based
+194,I am a developer by profession,United States of America,Assembly;C;C#;C++;Dart;HTML/CSS;Java;JavaScript;TypeScript,macOS
+195,I am a developer by profession,United States of America,Bash/Shell;C;C#;C++;Go;Java;JavaScript;Python;SQL;Swift;TypeScript,Linux-based;macOS
+196,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Assembly;Bash/Shell;C;C#;C++;Erlang;Go;Groovy;HTML/CSS;Java;JavaScript;Python,Linux-based;macOS
+197,I am a developer by profession,India,Python;Rust;TypeScript,macOS
+198,I am learning to code,United States of America,Bash/Shell;C;Clojure;Dart;Erlang;HTML/CSS;Java;JavaScript;LISP;Lua;Python;Rust;SQL;Swift;TypeScript,macOS
+200,I am a developer by profession,Hong Kong (S.A.R.),Bash/Shell;Haskell;HTML/CSS;Python;Rust;SQL,Linux-based;macOS
+201,I am a developer by profession,United States of America,C#;HTML/CSS;JavaScript;Python,Windows
+202,I am a developer by profession,Portugal,JavaScript;TypeScript,macOS;Windows
+203,I am a developer by profession,Netherlands,Bash/Shell;C;C++;HTML/CSS;JavaScript;PHP;Python;SQL,Linux-based;Windows Subsystem for Linux (WSL)
+204,I am a developer by profession,France,Bash/Shell;Python;SQL,Linux-based
+205,I am a developer by profession,United States of America,Bash/Shell;C++;Java;Python,Linux-based
+206,I am a developer by profession,United States of America,C#;JavaScript;PowerShell,Windows
+207,I am a developer by profession,United States of America,Bash/Shell;C;C++;Dart;HTML/CSS;Java;JavaScript;Objective-C;Swift,Linux-based;macOS;Windows;Windows Subsystem for Linux (WSL)
+208,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,C#;HTML/CSS;SQL;TypeScript,Windows
+209,I am a developer by profession,Belarus,C;C++;PHP;Ruby,Linux-based
+211,I am a developer by profession,United States of America,C#;HTML/CSS;JavaScript;TypeScript,Windows
+212,I am a developer by profession,Russian Federation,Java,Windows
+213,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Bash/Shell;Go;HTML/CSS;Java;JavaScript;Python;SQL,macOS
+214,I am a developer by profession,Austria,C;C++;Perl;SQL,Linux-based;macOS
+215,I am a developer by profession,United States of America,C;JavaScript;Python;SQL;TypeScript,Linux-based;Windows;Windows Subsystem for Linux (WSL)
+216,I am a developer by profession,Belgium,C#;HTML/CSS;JavaScript;SQL,Windows
+217,I code primarily as a hobby,Slovenia,Bash/Shell;C;C++;Go;HTML/CSS;Java;JavaScript;Python;Rust;TypeScript,Windows
+222,I am a developer by profession,Saudi Arabia,Erlang;Go;Java;JavaScript;Python;SQL,macOS
+223,I am a developer by profession,United States of America,C#;C++;HTML/CSS;JavaScript;PowerShell;SQL;TypeScript,Windows
+224,I am a developer by profession,United States of America,JavaScript,Linux-based
+225,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Bash/Shell;C;C++;Groovy;HTML/CSS;Java;JavaScript;Python,Windows;Windows Subsystem for Linux (WSL)
+226,I am a developer by profession,United States of America,C#;SQL,Windows
+229,I am a developer by profession,United States of America,C#;HTML/CSS;JavaScript;PowerShell;Python;SQL,Windows;Windows Subsystem for Linux (WSL)
+230,I am a developer by profession,United States of America,Go,Linux-based
+231,None of these,NA,NA,NA
+232,I am a developer by profession,Germany,Bash/Shell;C;HTML/CSS;Java;JavaScript;Kotlin;Python;Rust;SQL;TypeScript,Linux-based
+234,I am a developer by profession,United States of America,C#;HTML/CSS;JavaScript;SQL;TypeScript,Windows Subsystem for Linux (WSL)
+235,I am a developer by profession,Brazil,Bash/Shell;Go,macOS
+237,I am a developer by profession,Turkey,C#;Dart;JavaScript,Windows
+238,I am a developer by profession,Canada,Bash/Shell;HTML/CSS;Java;JavaScript;Python;Scala;SQL,macOS;Windows
+239,I am a developer by profession,Netherlands,Delphi,Windows
+240,I am a developer by profession,United States of America,Bash/Shell;Go;HTML/CSS;Python;SQL,Linux-based;macOS
+241,I am learning to code,United Kingdom of Great Britain and Northern Ireland,HTML/CSS;Python;Ruby;SQL;VBA,Windows
+244,I am a developer by profession,Germany,Bash/Shell;C;Java;Python,Linux-based;Windows
+247,I am a developer by profession,United States of America,Go;HTML/CSS;JavaScript;Kotlin;PHP;Python;SQL,Linux-based;macOS
+248,I am a developer by profession,United States of America,C#;C++;HTML/CSS;JavaScript;SQL;Swift;TypeScript,Windows
+250,I am learning to code,Austria,Python,Windows;Windows Subsystem for Linux (WSL)
+251,I am a developer by profession,United States of America,C++;HTML/CSS;JavaScript;PHP;Python,Windows
+252,I am a developer by profession,France,C++;HTML/CSS;Python;Rust;SQL,Linux-based
+254,I am a developer by profession,Netherlands,C#;HTML/CSS;Java;JavaScript;TypeScript,Windows
+255,I am a developer by profession,Canada,Bash/Shell;Go;Groovy;Java;Python;Ruby,Linux-based
+256,I am a developer by profession,Sweden,Assembly;C;C++,Other (please specify):
+257,I am a developer by profession,Israel,Bash/Shell;Go;JavaScript;Python,macOS
+258,I am a developer by profession,Portugal,Bash/Shell;C;C#;C++;HTML/CSS;Java;JavaScript;MATLAB;PHP;PowerShell;Python;SQL;TypeScript,BSD;Linux-based;Windows;Windows Subsystem for Linux (WSL)
+259,I am a developer by profession,Poland,C;Haskell;JavaScript;Python;Rust;SQL,Linux-based
+260,I am a developer by profession,Israel,Clojure;Python;Ruby;Scala,macOS
+261,I am a developer by profession,Sweden,C#;HTML/CSS;JavaScript;PHP;SQL;TypeScript,Windows;Windows Subsystem for Linux (WSL)
+262,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,C#;HTML/CSS;JavaScript;SQL;VBA,Windows
+264,I am a developer by profession,Germany,C;C++;Python;Rust;SQL,Linux-based
+265,I am a developer by profession,Israel,Bash/Shell;Java;Python;Scala;SQL,macOS
+266,I am a developer by profession,United States of America,Bash/Shell;Groovy;Java;JavaScript;PHP;Python;Rust;SQL,Linux-based
+267,I am a developer by profession,Czech Republic,C;C#;C++;Go;Python;Rust,Linux-based;Windows;Windows Subsystem for Linux (WSL)
+268,I am a developer by profession,Poland,Bash/Shell;JavaScript;Python;SQL;TypeScript,Linux-based
+269,I am a developer by profession,Kenya,HTML/CSS;JavaScript;Python,Windows
+270,I am a developer by profession,United States of America,Bash/Shell;C#;HTML/CSS;JavaScript;PowerShell;Python;Rust;SQL;TypeScript,Linux-based;Windows;Windows Subsystem for Linux (WSL)
+271,I am learning to code,Switzerland,C;C++;HTML/CSS;Java;JavaScript;Python,Linux-based;Windows;Windows Subsystem for Linux (WSL)
+272,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Bash/Shell;Go;HTML/CSS;JavaScript,macOS
+273,I am a developer by profession,Switzerland,C#;Dart;Go;Java;Kotlin;Python;Rust;SQL;TypeScript,Linux-based;macOS;Windows;Windows Subsystem for Linux (WSL)
+274,I am a developer by profession,United States of America,Bash/Shell;C;C#;C++;Java;PowerShell,Linux-based;Windows
+275,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Bash/Shell;Delphi;HTML/CSS;PowerShell;Python;Ruby;SQL;TypeScript,Linux-based;macOS
+276,I am a developer by profession,Israel,C#;HTML/CSS;JavaScript;SQL,Linux-based;Windows
+277,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Bash/Shell;Go;HTML/CSS;JavaScript;PHP;Python;SQL,macOS
+278,I am a developer by profession,Netherlands,Bash/Shell;HTML/CSS;JavaScript;Python;R;SQL,Windows
+279,I am a developer by profession,United States of America,C#;JavaScript;Python,Windows
+280,I am a developer by profession,Brazil,C#;HTML/CSS;JavaScript;TypeScript,macOS
+281,I am a developer by profession,United States of America,Bash/Shell;C++;Java;Python,Windows
+282,I am a developer by profession,United States of America,C#;Go;Rust;TypeScript,Linux-based;Windows;Windows Subsystem for Linux (WSL)
+283,I am a developer by profession,Netherlands,Assembly;C++;Python;Rust,Linux-based
+285,I am a developer by profession,Italy,C#;C++;HTML/CSS;Java;JavaScript;Kotlin;PHP;SQL;TypeScript;VBA,Linux-based;Windows;Windows Subsystem for Linux (WSL)
+287,I am a developer by profession,United States of America,Bash/Shell;HTML/CSS;Java;JavaScript;PowerShell;Python;Rust;SQL;TypeScript,Windows
+288,I am a developer by profession,Germany,Bash/Shell;HTML/CSS;Java;JavaScript;Kotlin;SQL;TypeScript,macOS
+289,I am a developer by profession,United States of America,C;JavaScript;Python;Scala,Linux-based;macOS
+290,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Assembly;Bash/Shell;C++;F#;JavaScript;Lua;Rust,Linux-based
+291,I am a developer by profession,United States of America,C#;Dart;HTML/CSS;JavaScript;PowerShell;Python;TypeScript,Windows
+292,I am a developer by profession,India,C++;HTML/CSS;Java;JavaScript;PHP;SQL;TypeScript,Linux-based
+293,I am a developer by profession,Sweden,Bash/Shell;C#;Go;HTML/CSS;Java;JavaScript;Kotlin;Python;SQL,Linux-based
+294,I am a developer by profession,Germany,Bash/Shell;C#;C++;Dart;HTML/CSS;Java;JavaScript;PowerShell;SQL;TypeScript,Linux-based;Windows;Windows Subsystem for Linux (WSL)
+295,I am a developer by profession,France,HTML/CSS;JavaScript;Python;SQL,Windows
+296,I am a developer by profession,France,Bash/Shell;Elixir;Go;Java;JavaScript;PHP;Rust;SQL,Linux-based
+297,I am a developer by profession,Canada,Bash/Shell;Python,Linux-based
+298,I am a developer by profession,Canada,Bash/Shell;Go;HTML/CSS;JavaScript;SQL,Linux-based
+299,I am a developer by profession,Poland,C;C++,Linux-based;macOS;Windows
+300,I am a developer by profession,United States of America,C#;C++;HTML/CSS;Java;JavaScript;Perl;PowerShell;Python;Ruby;SAS;SQL;TypeScript;VBA,Windows;Windows Subsystem for Linux (WSL)
+301,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,JavaScript;Python,Linux-based
+302,I am a developer by profession,India,Dart,Linux-based;macOS
+303,I am a developer by profession,United States of America,HTML/CSS;JavaScript;Python;TypeScript,macOS
+305,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,HTML/CSS;JavaScript;PHP;Ruby;SQL,Windows
+306,I am a developer by profession,United States of America,C#;HTML/CSS;Java;JavaScript;Python;SQL,Linux-based;macOS
+308,I am a developer by profession,United States of America,Bash/Shell;C#;Go;HTML/CSS;JavaScript;PowerShell;Python,Linux-based;macOS
+309,I am a developer by profession,United States of America,Go;Python;SQL,Linux-based;macOS
+310,I am a developer by profession,Czech Republic,C#;HTML/CSS;JavaScript;Python,Windows
+311,I am a developer by profession,United States of America,Python;Rust,macOS
+312,I am a developer by profession,Spain,C#;HTML/CSS;JavaScript;Lua;PowerShell;SQL;VBA,Windows;Windows Subsystem for Linux (WSL)
+313,I am a developer by profession,United States of America,HTML/CSS;JavaScript;PHP;TypeScript,macOS
+314,I am a developer by profession,United States of America,C#;HTML/CSS;JavaScript;PowerShell;SQL;TypeScript,Windows
+316,I am a developer by profession,United States of America,Bash/Shell;Go;Python,macOS
+317,I am a developer by profession,United States of America,HTML/CSS;JavaScript;Python;Scala;SQL;TypeScript,Linux-based;macOS
+318,I am a developer by profession,United States of America,Bash/Shell;C#;PowerShell;SQL,Windows
+319,I am a developer by profession,Latvia,Dart;Kotlin;Python;Ruby;Swift;TypeScript,macOS
+320,I code primarily as a hobby,France,Rust;VBA,macOS;Windows
+322,I am a developer by profession,Belgium,C#;C++;HTML/CSS;Java;JavaScript;MATLAB;Rust;SQL,Windows
+323,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Bash/Shell;Erlang;Go;Groovy;Java;JavaScript;Lua;Python;Ruby,macOS
+324,I am a developer by profession,Austria,Bash/Shell;Clojure;Java;SQL,Windows
+325,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Bash/Shell;C;C++;Java;JavaScript;LISP;Objective-C;Python,macOS
+326,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,C;C#;C++;Crystal;Dart;Go;Groovy;HTML/CSS;Java;JavaScript;Kotlin;Objective-C;Python;TypeScript,macOS
+327,I am a developer by profession,Germany,C#;C++;Python;Rust,Linux-based
+328,I am a developer by profession,Ireland,Bash/Shell;Elixir;Python;Ruby;Rust,Linux-based
+329,I am a developer by profession,Turkey,C++;Java;JavaScript;SQL,macOS;Windows
+331,I am a developer by profession,Canada,C;C#;C++;HTML/CSS;JavaScript;Rust;TypeScript,Windows
+332,I am a developer by profession,United States of America,Bash/Shell;C#;PowerShell;Python,macOS
+333,I am learning to code,France,Bash/Shell;C;C++;HTML/CSS;JavaScript;Python;TypeScript,Linux-based
+334,I am a developer by profession,Israel,Assembly;Bash/Shell;C;C++;Python;SQL,macOS
+335,I am a developer by profession,Portugal,C;Python,Linux-based
+336,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Perl;SQL,
+337,I am a developer by profession,Canada,Bash/Shell;C;C++;HTML/CSS;JavaScript;Python;SQL,Linux-based
+338,I am a developer by profession,United States of America,C++;JavaScript;Python;Rust;TypeScript,Windows Subsystem for Linux (WSL)
+339,I am a developer by profession,United States of America,Bash/Shell;HTML/CSS;JavaScript;PHP;SQL,Linux-based;macOS;Windows
+340,I am a developer by profession,Netherlands,C#;Dart;HTML/CSS;JavaScript;PHP;Python;SQL;TypeScript,macOS
+341,I am a developer by profession,Ireland,C#;HTML/CSS;SQL;VBA,Windows
+342,I am a developer by profession,France,Delphi;HTML/CSS;JavaScript;PHP,Linux-based;Windows
+343,I am a developer by profession,South Africa,Bash/Shell;HTML/CSS;JavaScript;PHP;Rust;SQL,Windows Subsystem for Linux (WSL)
+344,I am a developer by profession,Iceland,Bash/Shell;Go;Python,macOS;Other (please specify):
+345,I am a developer by profession,United States of America,Bash/Shell;HTML/CSS;Java;JavaScript;Kotlin;Python;Ruby;SQL;TypeScript,macOS
+347,I am a developer by profession,Germany,Bash/Shell;C#;Dart;Go;HTML/CSS;Java;JavaScript;Rust;TypeScript,macOS
+348,I am a developer by profession,United States of America,Bash/Shell;C++;HTML/CSS;Java;JavaScript;Python;SQL,Windows
+349,I am a developer by profession,United States of America,HTML/CSS;Java;JavaScript;Kotlin;Python;TypeScript,macOS
+350,I am a developer by profession,Canada,Bash/Shell;Perl;SQL,Linux-based;macOS
+352,I am a developer by profession,Austria,Bash/Shell;C++;Go;Python,Linux-based
+353,I am a developer by profession,Netherlands,JavaScript;TypeScript,macOS;Windows
+354,I am a developer by profession,Finland,Bash/Shell;JavaScript;Rust;TypeScript,Linux-based
+355,I am a developer by profession,Sweden,Bash/Shell;C#;HTML/CSS;JavaScript;PowerShell;SQL;TypeScript,Windows
+357,I am a developer by profession,United States of America,Kotlin,macOS
+358,I am a developer by profession,United States of America,Bash/Shell;Java;JavaScript;PHP;SQL,Linux-based;macOS
+359,I am a developer by profession,Thailand,C#;Dart;Go;JavaScript;Swift;TypeScript,macOS
+360,I am a developer by profession,United States of America,Assembly;Bash/Shell;C;MATLAB;Python,Linux-based;Windows;Windows Subsystem for Linux (WSL)
+361,I am a developer by profession,China,C;C#;C++;HTML/CSS;JavaScript;Kotlin;Lua;PowerShell;Rust;SQL;TypeScript,Linux-based;Windows;Windows Subsystem for Linux (WSL)
+362,I am a developer by profession,United States of America,Bash/Shell;C++;Dart;Go;HTML/CSS;Java;JavaScript;Python;Rust;SQL,Linux-based
+363,I am a developer by profession,Sweden,Bash/Shell;C;Go;Rust;SQL;TypeScript,Linux-based
+364,I am a developer by profession,United States of America,C#;Java;JavaScript;Lua;PowerShell;Python;SQL,Linux-based;Windows;Windows Subsystem for Linux (WSL)
+365,I am a developer by profession,United States of America,C#;Java,Linux-based;macOS;Windows;Windows Subsystem for Linux (WSL)
+366,I am a developer by profession,United States of America,C#;Elixir;PowerShell;SQL;TypeScript,Linux-based;Windows;Windows Subsystem for Linux (WSL)
+367,I am a developer by profession,United States of America,Java;Python;SQL,macOS
+368,I am a developer by profession,United States of America,Go;MATLAB;Python;Rust,Linux-based;macOS;Windows
+369,I am a developer by profession,United States of America,Bash/Shell;C;C#;C++;F#;HTML/CSS;JavaScript;PowerShell;Python;SQL;TypeScript,Linux-based;Windows;Windows Subsystem for Linux (WSL)
+371,I am a developer by profession,United States of America,Bash/Shell;HTML/CSS;JavaScript;PHP;Python;SQL,Linux-based
+372,I am a developer by profession,France,Go;Rust,Windows
+373,I am a developer by profession,United States of America,Python;Rust,Linux-based
+374,I am a developer by profession,Brazil,C#;Java;Kotlin;SQL;TypeScript,Windows;Windows Subsystem for Linux (WSL)
+375,I am a developer by profession,Montenegro,JavaScript;SQL,macOS
+376,I am a developer by profession,India,Go;Python,macOS
+377,I am a developer by profession,Serbia,Bash/Shell;C;C++,Windows
+378,I am a developer by profession,Brazil,Bash/Shell;C;C++;Haskell;JavaScript;LISP;Lua;OCaml;Python;Rust;Solidity,Linux-based
+379,I am a developer by profession,Italy,Go;JavaScript;PHP;Rust;SQL,Linux-based
+380,I am a developer by profession,Germany,HTML/CSS;Rust,Linux-based
+381,I am a developer by profession,United States of America,Bash/Shell;C#;HTML/CSS;Java;JavaScript;Lua;PowerShell;Python;SQL,Windows;Windows Subsystem for Linux (WSL)
+383,I am a developer by profession,United States of America,Bash/Shell;HTML/CSS;JavaScript;Rust;SQL;TypeScript,Linux-based
+384,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Assembly;Bash/Shell;C;C++;HTML/CSS;JavaScript;Kotlin;Lua;PHP;Python;Rust;SQL,Linux-based
+385,I am a developer by profession,Turkey,Python,macOS;Windows
+386,I am a developer by profession,United States of America,Bash/Shell;HTML/CSS;Java;JavaScript;Kotlin;Python;Ruby;SQL;TypeScript,Linux-based;Windows;Windows Subsystem for Linux (WSL)
+387,I am a developer by profession,Finland,HTML/CSS;Java;TypeScript,Windows
+388,I am a developer by profession,United States of America,Java;JavaScript;SQL,Windows
+389,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Bash/Shell;HTML/CSS;JavaScript;PHP;TypeScript,Linux-based
+390,I am a developer by profession,United States of America,C#,Linux-based;Windows
+391,I am a developer by profession,France,Java;JavaScript,Linux-based
+392,I am a developer by profession,United States of America,C#;Elixir;Erlang;F#;Go;HTML/CSS;JavaScript;PowerShell;Rust;SQL;Swift;TypeScript,macOS;Windows;Windows Subsystem for Linux (WSL)
+393,I am a developer by profession,Slovakia,Go;JavaScript;Rust;TypeScript,Linux-based
+394,I am a developer by profession,Netherlands,C#;HTML/CSS;JavaScript;PowerShell;SQL;TypeScript,Windows
+395,I am a developer by profession,United States of America,APL;Bash/Shell;C;C++;Go;Haskell;LISP;Perl;Python;Rust,Linux-based
+396,I am a developer by profession,Ireland,C#;C++;HTML/CSS;Python;Rust;SQL;TypeScript,Linux-based
+397,I am a developer by profession,Germany,C#;HTML/CSS;JavaScript;PowerShell;Python;SQL,macOS;Windows
+398,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,C#;HTML/CSS;JavaScript;PowerShell;SQL;TypeScript,Windows
+399,I am a developer by profession,Montenegro,C#;C++,Windows;Windows Subsystem for Linux (WSL)
+400,I am a developer by profession,India,Bash/Shell;C;C++;Go;HTML/CSS;Perl;Python;SQL,Linux-based;macOS
+402,I am a developer by profession,United States of America,Bash/Shell;C#;Java;Kotlin;PowerShell;Python;SQL;VBA,Windows Subsystem for Linux (WSL)
+403,I am a developer by profession,Israel,Go;HTML/CSS;JavaScript;TypeScript,macOS;Windows Subsystem for Linux (WSL)
+404,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,HTML/CSS;JavaScript;TypeScript,macOS
+405,I am a developer by profession,United States of America,Bash/Shell;C;C#;C++;HTML/CSS;Java;JavaScript;Python;SQL,Linux-based;Windows;Windows Subsystem for Linux (WSL)
+406,I am a developer by profession,United States of America,Bash/Shell;Elixir;Go;Haskell;JavaScript,macOS
+407,I am a developer by profession,United States of America,HTML/CSS;JavaScript;Kotlin;Python;Rust;TypeScript,macOS
+408,I am a developer by profession,United States of America,Assembly;C#;C++;HTML/CSS;JavaScript;PowerShell;SQL,Windows
+409,I am a developer by profession,Japan,Assembly;C;C++;JavaScript;Lua;Rust;TypeScript,Linux-based;Windows;Windows Subsystem for Linux (WSL)
+410,I am a developer by profession,Serbia,Assembly;C++;Go;JavaScript;Rust;Solidity;Swift,Windows
+411,I am a developer by profession,Denmark,Bash/Shell;C++;HTML/CSS;JavaScript;Python;Ruby;Rust;SQL,Linux-based
+412,I am a developer by profession,Germany,Bash/Shell;HTML/CSS;JavaScript;PHP;Rust;SQL;TypeScript,Linux-based
+413,I am a developer by profession,United States of America,HTML/CSS;JavaScript;Rust;SQL,Linux-based
+414,I code primarily as a hobby,United States of America,Java;Python,macOS
+415,I am a developer by profession,Sweden,Assembly;Bash/Shell;C;C#;C++;Delphi;Groovy;HTML/CSS;Java;Perl;PowerShell;Python;Rust,Linux-based
+416,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Haskell;Java;Python;Rust,Linux-based;Windows Subsystem for Linux (WSL)
+417,I code primarily as a hobby,Spain,Bash/Shell;C;C++;HTML/CSS;JavaScript;MATLAB;PHP;Python;Rust;SQL;TypeScript,Linux-based
+418,I am a developer by profession,India,Go,Linux-based;macOS
+419,I am a developer by profession,Portugal,C;C++;Haskell;Java;Rust,Linux-based
+420,I am a developer by profession,United States of America,C#;HTML/CSS;JavaScript;TypeScript,macOS;Windows
+421,I am learning to code,Germany,Bash/Shell;LISP;Rust,Linux-based
+423,I am a developer by profession,United States of America,Bash/Shell;Groovy;JavaScript;Python;Rust;SQL,Linux-based;macOS
+424,I am a developer by profession,United States of America,HTML/CSS;JavaScript;PHP;Ruby,macOS
+425,I am a developer by profession,Belgium,C;C++;Python,Linux-based;macOS;Windows;Windows Subsystem for Linux (WSL)
+426,I am learning to code,Canada,Bash/Shell;C;C#;Java;PowerShell;Python;R,Windows;Windows Subsystem for Linux (WSL)
+427,I am a developer by profession,United States of America,Assembly;Bash/Shell;C;C++;Go;Java;JavaScript;LISP;Lua;Python;Rust;TypeScript,macOS
+428,I am a developer by profession,United States of America,Bash/Shell;Dart;Go;JavaScript;PowerShell;Python;Rust;SQL;TypeScript,Linux-based;Windows Subsystem for Linux (WSL)
+429,I am learning to code,France,Bash/Shell;C;C#;C++;Dart;Go;HTML/CSS;Java;JavaScript;Lua;PHP;PowerShell;Python;Ruby;SQL,Linux-based;Windows;Windows Subsystem for Linux (WSL)
+430,I am a developer by profession,United States of America,Clojure;HTML/CSS;JavaScript;Kotlin;PHP;Rust;SQL,Linux-based
+432,I am a developer by profession,Spain,Kotlin;Objective-C;SQL;Swift,macOS;Windows
+433,I am a developer by profession,United States of America,Bash/Shell;HTML/CSS;Java;JavaScript;LISP;PowerShell;SQL,Windows
+434,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,C;C++;Delphi,Windows
+435,I code primarily as a hobby,United States of America,Groovy;Java,Windows
+436,I am a developer by profession,Germany,Java;TypeScript,Windows
+437,I am a developer by profession,United States of America,C#;HTML/CSS;JavaScript,Windows
+438,I am a developer by profession,United States of America,Assembly;Bash/Shell;C;C++;HTML/CSS;Java;JavaScript;OCaml;Python;Rust,Linux-based
+439,I am a developer by profession,Germany,C++;JavaScript;PHP;Rust,macOS
+440,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,C#;Dart,macOS
+441,I am a developer by profession,United States of America,Bash/Shell;C#;HTML/CSS;JavaScript;Python;SQL,Windows;Windows Subsystem for Linux (WSL)
+442,I am a developer by profession,United States of America,Bash/Shell;Java;Kotlin;Python;Rust,Linux-based
+443,I am a developer by profession,China,C;C++;Dart;Elixir;Erlang;Go;HTML/CSS;JavaScript;Rust;Scala;SQL;TypeScript,Linux-based;Windows Subsystem for Linux (WSL)
+444,I am a developer by profession,United States of America,Bash/Shell;HTML/CSS;JavaScript;Python;SQL,Linux-based
+445,I am a developer by profession,United States of America,Bash/Shell;C;C++;Go;Haskell;HTML/CSS;JavaScript;Lua;OCaml;PHP;Python;Rust;TypeScript,Linux-based
+446,I am a developer by profession,Spain,HTML/CSS;Java;JavaScript;SQL;TypeScript,Windows
+447,I am a developer by profession,Spain,Bash/Shell;HTML/CSS;Python;TypeScript,Linux-based;Windows
+448,I am a developer by profession,United States of America,HTML/CSS;Java;JavaScript;Ruby;SQL,macOS
+449,I am a developer by profession,Germany,Bash/Shell;C++;Go;Python,Linux-based;Windows;Windows Subsystem for Linux (WSL)
+450,I am a developer by profession,Germany,Assembly;C;PHP;Python;R;SQL,Linux-based
+451,I am a developer by profession,Germany,C++;Python;Rust,Linux-based
+452,I code primarily as a hobby,United States of America,Bash/Shell;HTML/CSS;JavaScript;Lua;Rust,Linux-based
+454,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Delphi;HTML/CSS;JavaScript,Linux-based;macOS;Windows;Windows Subsystem for Linux (WSL)
+455,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,C#;JavaScript;Python;TypeScript,macOS
+456,I am a developer by profession,United States of America,Assembly;Bash/Shell;C;Go;Java;Julia;Python;Ruby;Rust;SQL,Linux-based;macOS
+458,I code primarily as a hobby,India,Bash/Shell;Go;Java;Kotlin;Python;Rust;TypeScript,Linux-based
+459,I am a developer by profession,Sweden,Bash/Shell;Python;Rust;Scala;SQL,Linux-based
+460,I am a developer by profession,Germany,Bash/Shell;C;C++;Python;Rust,Linux-based
+461,I am a developer by profession,United States of America,C++;Go;HTML/CSS;JavaScript;Kotlin;Python;TypeScript,macOS
+462,I am learning to code,Italy,Bash/Shell;HTML/CSS;JavaScript;PowerShell;Python,Linux-based;macOS
+463,I am a developer by profession,Brazil,Bash/Shell;C;HTML/CSS;JavaScript;Lua;TypeScript,Linux-based;macOS
+467,I am a developer by profession,France,C++;TypeScript,Windows;Windows Subsystem for Linux (WSL)
+468,I am a developer by profession,Canada,Java;JavaScript;Rust;TypeScript,macOS
+469,I am a developer by profession,United States of America,C#;PowerShell;SQL;TypeScript,macOS
+470,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Go;HTML/CSS;Java;JavaScript;Kotlin;Python;Rust;SQL,Linux-based;macOS
+471,I am a developer by profession,United States of America,Bash/Shell;C#;C++;HTML/CSS;Perl;PHP;PowerShell;Python;Rust;SQL;VBA,Linux-based;Windows
+472,I am a developer by profession,Netherlands,C;C#;C++;Java;JavaScript;Rust;SQL;TypeScript,Linux-based
+473,I am a developer by profession,United States of America,Bash/Shell;C;Objective-C;Python;Rust;Swift,macOS
+474,I am a developer by profession,Netherlands,Java;Python;TypeScript,Linux-based;Windows
+475,I am a developer by profession,United States of America,Bash/Shell;HTML/CSS;JavaScript;OCaml;Python;TypeScript,macOS;Windows
+476,I am a developer by profession,Australia,C#;Python,Linux-based;macOS
+477,I am a developer by profession,United States of America,C;C++;HTML/CSS;Java;JavaScript;Python;TypeScript,macOS
+479,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Assembly;Bash/Shell;C;C++;MATLAB,Linux-based;macOS;Windows;Windows Subsystem for Linux (WSL)
+480,I am a developer by profession,Canada,C#;HTML/CSS;Java;JavaScript;SQL;TypeScript;VBA,Windows
+481,I code primarily as a hobby,Germany,JavaScript;Python;Rust,Windows
+482,I am a developer by profession,Greece,Java;JavaScript;Python;SQL,Linux-based;Windows
+483,I code primarily as a hobby,United Kingdom of Great Britain and Northern Ireland,Assembly;Bash/Shell;C;C#;C++;HTML/CSS;JavaScript;Lua;PowerShell;Python;Rust;SQL;TypeScript,Windows
+484,I am a developer by profession,United States of America,Python;Rust,Linux-based
+485,I am a developer by profession,Luxembourg,Bash/Shell;C#;Java;JavaScript;SQL;TypeScript,Linux-based;macOS
+486,I am a developer by profession,Czech Republic,C#,Linux-based;Windows
+487,I am a developer by profession,Viet Nam,C#;C++;HTML/CSS;Java;JavaScript;PHP;Ruby;SQL;TypeScript,Windows;Windows Subsystem for Linux (WSL)
+488,I am a developer by profession,United States of America,Bash/Shell;C;HTML/CSS;JavaScript;Python;Rust;SQL,Linux-based
+489,I am a developer by profession,United States of America,Bash/Shell;Elixir;Go;JavaScript;Rust,macOS
+490,I am a developer by profession,Netherlands,Bash/Shell;Java;Kotlin;Python,Linux-based
+491,I am a developer by profession,United States of America,C#;HTML/CSS;Java;JavaScript;Python;Rust;SQL;TypeScript,macOS
+492,I am a developer by profession,Poland,JavaScript;PHP,Linux-based;Windows
+493,I am a developer by profession,United States of America,Bash/Shell;HTML/CSS;JavaScript;Ruby;TypeScript,Linux-based;macOS
+494,I am a developer by profession,Netherlands,C#;HTML/CSS;JavaScript;PHP;SQL,macOS
+495,I am a developer by profession,Germany,Bash/Shell;C;C#;C++;PowerShell,Windows
+496,I am a developer by profession,Turkey,C#,Windows;Other (please specify):
+497,I am a developer by profession,Australia,C#;HTML/CSS;JavaScript;SQL;TypeScript,macOS;Windows
+499,I am a developer by profession,United States of America,Java;Kotlin;Python;SQL,macOS
+500,I am a developer by profession,United States of America,Bash/Shell;Go;Groovy;Python;Ruby;Swift,macOS
+501,I am a developer by profession,United States of America,C#;F#;HTML/CSS;JavaScript;PowerShell;SQL,Windows
+502,I am a developer by profession,Switzerland,Assembly;C;C#;C++;PowerShell;Python,Windows
+503,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Assembly;C;C++;Haskell;Rust,Linux-based
+504,I am a developer by profession,United States of America,C++;HTML/CSS;Java;JavaScript;Python;R;SQL;TypeScript,Linux-based
+506,I am a developer by profession,Portugal,Bash/Shell;C;C#;C++;Go;HTML/CSS;Java;JavaScript;Julia;MATLAB;PHP;PowerShell;Python;R;Rust;SAS;Scala;SQL;TypeScript,BSD;Linux-based;Windows;Windows Subsystem for Linux (WSL)
+507,I am learning to code,Finland,Java;JavaScript,macOS
+508,I am a developer by profession,United States of America,C#;JavaScript;Python;Rust,Linux-based
+509,I am a developer by profession,Canada,C;C++;JavaScript;Objective-C;PHP;SQL,Linux-based;macOS;Windows
+510,I am a developer by profession,Canada,Haskell;Python;Rust,Windows
+511,I am a developer by profession,United States of America,C#;F#;SQL,Linux-based;Windows;Windows Subsystem for Linux (WSL)
+512,I am a developer by profession,France,HTML/CSS;JavaScript;PHP;Rust;Solidity;SQL;TypeScript,Linux-based;Windows
+513,I am a developer by profession,France,Go;TypeScript,Linux-based;macOS
+514,I am a developer by profession,United States of America,Assembly;C;C++;HTML/CSS;JavaScript;MATLAB;Python,Linux-based;Windows
+515,I am a developer by profession,United States of America,C++;Python,Linux-based;macOS;Windows
+516,I am a developer by profession,Canada,HTML/CSS;JavaScript;PHP;SQL,Linux-based
+518,I am a developer by profession,Germany,C#;HTML/CSS;Java;JavaScript;SQL;TypeScript,Windows
+519,I code primarily as a hobby,Israel,Python;Rust,Linux-based;macOS
+520,I am a developer by profession,Uruguay,JavaScript;PHP;SQL;TypeScript,macOS
+522,I am a developer by profession,Portugal,C#;Kotlin;Rust;SQL,Windows
+523,I am a developer by profession,Belgium,Groovy;Java;Scala;SQL,macOS
+524,I am a developer by profession,Canada,HTML/CSS;JavaScript;TypeScript,macOS
+525,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Bash/Shell;HTML/CSS;JavaScript;Lua;Python;Scala;TypeScript,macOS
+526,I am a developer by profession,India,Go;Python,BSD;Linux-based;macOS;Windows
+527,I am a developer by profession,Canada,C#;C++;HTML/CSS;JavaScript;Kotlin;Python;SQL;TypeScript,Windows;Windows Subsystem for Linux (WSL)
+528,I am a developer by profession,United States of America,C;C++;Java;PHP;Python;Rust,Linux-based;macOS
+529,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Go;JavaScript;PHP;Python;SQL,macOS
+530,I am a developer by profession,France,HTML/CSS;JavaScript;Python;Rust;SQL;TypeScript,Linux-based
+531,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,C;C++;Delphi;HTML/CSS;JavaScript;Perl;PHP;Python;SQL,Windows
+532,I am a developer by profession,Denmark,Bash/Shell;C#;HTML/CSS;JavaScript;PowerShell;SQL;VBA,Windows
+534,I am learning to code,France,Bash/Shell;HTML/CSS;JavaScript;Python;Ruby;SQL,Linux-based
+535,I am a developer by profession,Canada,C#;JavaScript;TypeScript,Windows
+536,I am a developer by profession,Canada,C#;C++,Windows
+537,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Bash/Shell;C;Go;Groovy;Java;Python;Ruby;Rust,Linux-based;Windows
+538,I am a developer by profession,Singapore,Assembly;C;C++;Haskell;Kotlin;OCaml;Rust;Scala;Swift;TypeScript,Linux-based
+539,I am a developer by profession,Portugal,Bash/Shell;C#;HTML/CSS;JavaScript;PowerShell;SQL;TypeScript,Linux-based;macOS
+540,I am a developer by profession,United States of America,Bash/Shell;Clojure;Haskell;HTML/CSS,macOS
+541,I am a developer by profession,Canada,Bash/Shell;C;Go;HTML/CSS;JavaScript;Lua;Rust;SQL,Linux-based;Windows;Windows Subsystem for Linux (WSL)
+542,I am a developer by profession,Spain,Bash/Shell;C;HTML/CSS;JavaScript;Kotlin;Objective-C;Rust;SQL;Swift;TypeScript,Linux-based;macOS
+543,None of these,NA,NA,NA
+544,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Bash/Shell;C;C++;Go;Java;SQL,Linux-based
+545,I am a developer by profession,Argentina,C#;C++,Windows
+546,I am a developer by profession,United States of America,C;C#;C++;Go;Haskell;Java;JavaScript;Kotlin;Ruby;Rust;Scala;SQL;TypeScript,Linux-based;Windows Subsystem for Linux (WSL)
+547,I am a developer by profession,Hungary,Bash/Shell;Erlang,Linux-based;Windows
+548,I am a developer by profession,United States of America,C#;C++;HTML/CSS;Java;JavaScript;PowerShell;Python;Rust;SQL;TypeScript,Windows
+550,I am a developer by profession,Germany,C#;SQL,Windows
+552,I am a developer by profession,Germany,Bash/Shell;C;C++;Go;Groovy;HTML/CSS;Java;JavaScript;PowerShell;Python;Rust;TypeScript,Windows;Windows Subsystem for Linux (WSL)
+553,I am a developer by profession,Tunisia,C;Java;JavaScript;Python;SQL;TypeScript,Linux-based;macOS
+554,I am a developer by profession,United States of America,C#;HTML/CSS;JavaScript;Python;Rust,Windows;Windows Subsystem for Linux (WSL)
+555,I am a developer by profession,United States of America,Dart;Go;Java;JavaScript;Kotlin;TypeScript,macOS
+556,I am a developer by profession,France,Bash/Shell;C#;Dart;JavaScript;Perl;Python;R;Rust;TypeScript,Linux-based
+557,I am a developer by profession,United States of America,TypeScript,Linux-based;Windows
+559,I am a developer by profession,United States of America,C#;C++;F#;Rust;SQL,Windows;Windows Subsystem for Linux (WSL)
+560,I am a developer by profession,United States of America,Bash/Shell;HTML/CSS;Java;JavaScript;Python;SQL,Linux-based;Windows
+561,I am a developer by profession,United States of America,Bash/Shell;C;Elixir;HTML/CSS;JavaScript;Kotlin;PHP;Rust;SQL;TypeScript,Linux-based;macOS;Windows
+562,I am a developer by profession,Germany,Bash/Shell;C#;Java;Perl;SQL,Windows;Windows Subsystem for Linux (WSL)
+563,I am a developer by profession,United States of America,Bash/Shell;C#;Dart;HTML/CSS;Java;JavaScript;MATLAB;SQL,Linux-based;Windows
+564,I am a developer by profession,France,HTML/CSS;Java;JavaScript;TypeScript,Linux-based;macOS
+565,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,C++;Java;JavaScript;Python,Linux-based;macOS
+566,I am a developer by profession,United States of America,Bash/Shell;C#;Go;HTML/CSS;JavaScript;PowerShell;Ruby;SQL;TypeScript;VBA,macOS
+567,I code primarily as a hobby,Netherlands,Assembly;Bash/Shell;C;C++;HTML/CSS;JavaScript;Rust;SQL;TypeScript,Linux-based;Windows
+569,I am a developer by profession,Sweden,Assembly;Bash/Shell;C#;C++;JavaScript;Lua;PowerShell;Python;Rust;SQL;TypeScript,Windows Subsystem for Linux (WSL)
+571,I am a developer by profession,India,C++;Go;Python,Linux-based;macOS
+572,I am a developer by profession,United States of America,Bash/Shell;C;C++;MATLAB;Python,Linux-based;Windows
+574,I am a developer by profession,Germany,HTML/CSS;Java;JavaScript;Kotlin;PHP;Python;Rust;SQL;TypeScript,macOS;Windows Subsystem for Linux (WSL)
+575,I am a developer by profession,Australia,Bash/Shell;C++;HTML/CSS;JavaScript;Python;Rust;TypeScript,Linux-based
+577,I am a developer by profession,Hungary,C;C#;C++;HTML/CSS;JavaScript;Rust;TypeScript,Windows;Windows Subsystem for Linux (WSL)
+578,I am a developer by profession,United States of America,Bash/Shell;Python;Rust;TypeScript,Linux-based
+579,I am a developer by profession,Canada,Bash/Shell;C;Kotlin;Rust;SQL,Linux-based
+580,I am a developer by profession,Canada,Bash/Shell;HTML/CSS;JavaScript;Python;Rust,Linux-based;macOS;Windows
+582,I am a developer by profession,France,Assembly;Bash/Shell;C;C++;HTML/CSS;Java;JavaScript;OCaml;Perl;PHP;Python;Rust;SQL,Linux-based;Windows
+583,I am a developer by profession,United States of America,C#,Windows
+584,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Bash/Shell;HTML/CSS;PHP;Python;SQL,macOS
+585,I am a developer by profession,Germany,Bash/Shell;C#;Elixir;HTML/CSS;JavaScript;PowerShell;Python;SQL;TypeScript,macOS
+586,I am a developer by profession,United States of America,C++;Python;Rust,Linux-based
+587,I am a developer by profession,France,Bash/Shell;HTML/CSS;JavaScript;PHP;Python;R;SAS;SQL,Linux-based
+588,I am a developer by profession,Canada,Clojure;Java;TypeScript,Linux-based;macOS;Windows
+589,I am a developer by profession,Canada,NA,macOS
+590,I am a developer by profession,United States of America,C#;F#;JavaScript,Windows
+591,I am a developer by profession,United States of America,HTML/CSS;JavaScript;Python;Rust;TypeScript,Windows
+592,I am a developer by profession,India,Java;Kotlin;TypeScript,macOS
+593,I am a developer by profession,Netherlands,Bash/Shell;HTML/CSS;JavaScript;PHP;Rust;SQL;TypeScript,Linux-based
+594,I code primarily as a hobby,France,Bash/Shell;C#;HTML/CSS;JavaScript;PowerShell;Python;TypeScript,
+595,I am a developer by profession,Denmark,C#;JavaScript;PowerShell;SQL;TypeScript,Windows;Windows Subsystem for Linux (WSL)
+596,I am a developer by profession,United States of America,Groovy;HTML/CSS;Java;JavaScript;Lua;PowerShell;Python;SQL,Linux-based;macOS;Windows
+597,I am a developer by profession,United States of America,Bash/Shell;Groovy;Java;JavaScript;Kotlin;PHP;Python;Rust;SQL;TypeScript,macOS
+599,I am a developer by profession,China,HTML/CSS;JavaScript;TypeScript,Windows
+600,I am a developer by profession,United States of America,Dart;HTML/CSS;JavaScript;PHP;Python;SQL;Swift,Linux-based;macOS;Windows
+601,I am learning to code,Turkey,Java,Windows
+603,I am a developer by profession,United States of America,Bash/Shell;Groovy;HTML/CSS;Java;JavaScript;PHP;Python;Rust;SQL,Linux-based
+604,I code primarily as a hobby,India,Bash/Shell;C;Python;Rust,Linux-based
+605,I am a developer by profession,United States of America,Python;SQL,Linux-based;Windows
+606,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,HTML/CSS;JavaScript;TypeScript,macOS
+607,I am a developer by profession,United States of America,Bash/Shell;Clojure;Java,macOS
+609,I am a developer by profession,Finland,Groovy;Java;JavaScript;Python;Rust;Scala,macOS
+610,I am a developer by profession,United States of America,C;C++;PowerShell;Python,Windows
+611,I am a developer by profession,United States of America,C;C++;Kotlin;Rust,macOS
+612,I am a developer by profession,United States of America,C;C++;Clojure;Go;Java,Linux-based
+613,I am a developer by profession,United States of America,C;C++;JavaScript;Python;Rust;SQL;TypeScript,Linux-based
+614,I am a developer by profession,Switzerland,Java;JavaScript;Python;Scala;SQL;TypeScript,Windows
+616,I am a developer by profession,Norway,Clojure;Groovy;HTML/CSS;JavaScript;Ruby,macOS
+617,I am a developer by profession,Czech Republic,Go;Java;Rust,macOS
+618,I am a developer by profession,United States of America,C;C#;JavaScript;SQL,Windows
+619,I am a developer by profession,United States of America,C#;C++;HTML/CSS;JavaScript;PowerShell,Windows
+620,I am a developer by profession,Finland,Bash/Shell;Clojure;HTML/CSS;Java;JavaScript;TypeScript,macOS
+621,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,Bash/Shell;Clojure;Java;LISP;Python;R,Linux-based
+622,I am a developer by profession,United States of America,C#;JavaScript;SQL;TypeScript,Windows
+623,I am a developer by profession,United Kingdom of Great Britain and Northern Ireland,HTML/CSS;JavaScript;PHP,macOS;Windows;Windows Subsystem for Linux (WSL)
+624,I am a developer by profession,Austria,C;C#;C++;Go;Java;JavaScript;Julia;Rust;SQL;TypeScript,Windows
+625,I am a developer by profession,South Africa,C++;HTML/CSS;JavaScript;Rust;TypeScript,Linux-based;macOS
+626,I am a developer by profession,Australia,Bash/Shell;C;HTML/CSS;JavaScript;PHP;SQL,macOS

@@ -93,23 +93,29 @@ class plotoverx:
         self.xg = xg
         self.yg = yg
 
-        newU = u.reshape(xg,yg)
-        newY = y.reshape(xg,yg).T
-        newX = x.reshape(xg,yg).T
+        newU = u.reshape(xg,yg).T
+        newY = y.reshape([xg,yg]).T
+        print(np.shape(newY))
+        newX = x.reshape([xg,yg]).T
+        print(np.shape(newX))
         x_boundary = newX[0, :]
-        #max_u = np.max(u)
-        #print(max_u)
+
+        # plt.contourf(newX,newY,newU, levels= 1000)
+        # plt.ylim([0, 0.01])
+        # plt.show()
 
         y_boundary = []
+        print(xg)
+        print(yg)
         for i in range(xg):
             for j in range(yg):
-                if newU[j,i] <= 0.99*u[0] or j==(yg-1):
+                if newU[j,i] >= 0.99*max(newU[:,i]) or j==(yg-1):
                     y_boundary.append(newY[j,i])
                     break
-
+        
         fig, ax1 = plt.subplots(1,1)
         ax1.plot(x_boundary,y_boundary, color='green', marker = 'x')
-        ax1.set_aspect(5)
+        ax1.set_aspect(100)
         #ax1.set_autoscale_on
         ax1.set_title('Boundary layer thickenss along the plate (99{} of $U_\infty$)'.format('%'))
         ax1.set_xlabel('x [m]')
@@ -119,6 +125,7 @@ class plotoverx:
         ax1.grid()
         plt.savefig("figures/boundarythickness.pdf")
         return
+    
 
 class contours:
 
@@ -170,7 +177,7 @@ class contours:
         ax1.set_aspect(1)
         ax2.set_aspect(1)
         ax3.set_aspect(1)
-        plt.savefig("figures/contours.pdf")
+        plt.savefig("figures/contours.pdf", format='eps')
         return
 
     def boundarycontours(self, x,y,T,P,u,xg,yg):
@@ -219,7 +226,7 @@ class contours:
         ax1.set_ylim([0, 0.001])
         ax2.set_ylim([0, 0.001])
         ax3.set_ylim([0, 0.001])
-        plt.savefig("figures/boundarycontours.pdf")
+        plt.savefig("figures/boundarycontours.pdf",format='eps')
         return
 
 class boundary:
@@ -437,20 +444,25 @@ class boundary:
         return
     
     def blasius(self,x,y,u,mu,yg):
+    
         col_begin = []
 
         for i in range(len(y)):
-            if y[i] == max(y):
+            if y[i] == min(y):
                 col_begin.append(i)
 
-        pos = 55
+        
+
+        pos = int((len(x)/yg)*0.95)
         i1 = col_begin[pos]
         i2 = col_begin[pos]+yg
 
         x, y_su2, u = x[i1:i2], y[i1:i2], u[i1:i2]
-        u_norm_su2 = u/u[0]
+        u_norm_su2 = u/u[yg-1]
 
-        eta_su2 = y_su2* np.sqrt(u[0]/(mu[0]*x))
+        eta_su2 = y_su2* np.sqrt(u[yg-1]/(mu[yg-1]*x))
+        
+        
 
         #####################################################################################
         #####################################################################################
@@ -507,12 +519,12 @@ class boundary:
             while (abs(delta) >= tol and n <= nmax) :
                 delta = (b-a)/2; n = n + 1;
                 x = a + delta; fx = shoot(x,h)
-                print(" x = %14.7e (Estimated error %13.7e at iteration %d)" % (x,abs(delta),n))
+                #print(" x = %14.7e (Estimated error %13.7e at iteration %d)" % (x,abs(delta),n))
                 if (fx*fa > 0) :
                     a = x;  fa = fx
                 else :
                     b = x;  fb = fx
-            if (n > nmax) :
+            if (n > nmax):
                 raise RuntimeError('Too much iterations') 
             return x
             
@@ -525,7 +537,7 @@ class boundary:
         
         #######################################################################################
         #######################################################################################
-
+       
         fig, ax = plt.subplots(1,1)
         ax.plot(U[:,1],X,'-r',label='blasius')
         ax.plot(u_norm_su2, eta_su2, marker='.',color='purple', label = 'SU2')
@@ -534,14 +546,18 @@ class boundary:
         ax.set_ylabel('$\eta$')
         ax.legend()
         ax.set_ylim([0,10])
-        plt.savefig("figures/blasius.pdf")
+        try:
+            plt.savefig("figures/blasius.pdf")
+        except:
+            plt.savefig("bplot.pdf")
+
 
 class grid:
 
     def __init__(self):
         return
 
-    def meshplolt(self,x,y):
+    def meshplot(self,x,y):
         self.x = x
         self.y = y
 

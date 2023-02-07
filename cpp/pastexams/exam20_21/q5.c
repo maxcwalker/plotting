@@ -43,7 +43,6 @@ int main(){
     // ...
     // ...
 
-
     int N = (Tf-Ti) / dT;
 
     double *y1, *y2, *t;
@@ -77,6 +76,4 @@ int main(){
 
     // ...
     // ...
-
-
 }
