@@ -7,21 +7,9 @@ from plots import readfile
 
 ##########SU2 data#########################
 exvar = readfile()
-x,y,rho,E,P,T,cp,mu,u,v,xg,yg,Csfx = exvar.variables("../SU2/mach2_comp_lam_plateNemo/restart_flow.csv")
-u_inf = u[0]
-col_begin = []
+x,y,rho,E,P,T,cp,mu,u,v,xg,yg,Csfx = exvar.variables("./restart_flow.csv")
 
-for i in range(len(y)):
-    if y[i] == max(y):
-        col_begin.append(i)
 
-pos = 60
-i1 = col_begin[pos]
-i2 = col_begin[pos]+yg
-x, y_su2, u = x[i1:i2], y[i1:i2], u[i1:i2]
-u_norm_su2 = u/u[0]
-
-eta_su2 = y_su2* np.sqrt(u_inf/(mu[0]*x))
 
 #####################################################################################
 #####################################################################################
@@ -98,16 +86,14 @@ X,U = rungekutta(a,h)
 # ####################################################################################
 # ####################################################################################
 
-# plt.xlabel('$\eta$')
-# plt.ylabel('$f(\eta)$')
 
-# #plt.plot(X,U[:,1]*X - U[:,0],'-b',X,U[:,1],'-r')
-# plt.plot(U[:,1],X*2,'-r',label='blasius') # U[:,1]*X - U[:,0],X,'-b'
-# plt.plot(u_norm_su2, eta_su2, marker='.',color='purple', label = 'SU2')
-# plt.title('Velocity profile comparison for a Laminar Flat Plate')
-# plt.xlabel('$u/U_e$')
-# plt.ylabel('$\eta$')
-# plt.legend()
-# plt.ylim([0,10])
+#plt.plot(X,U[:,1]*X - U[:,0],'-b',X,U[:,1],'-r')
+plt.plot(U[:,1],X*2,'-r',label='blasius') # U[:,1]*X - U[:,0],X,'-b'
+plt.plot(u_norm_su2, eta_su2, marker='.',color='purple', label = 'SU2')
+plt.title('Velocity profile comparison for a Laminar Flat Plate')
+plt.xlabel('$u/U_e$')
+plt.ylabel('$\eta$')
+plt.legend()
+plt.ylim([0,10])
 
-# plt.show()
+plt.show()

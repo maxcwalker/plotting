@@ -61,6 +61,8 @@ fig, ax = plt.subplots(1,1)
 print(np.shape(coords))
 for i in range(len(coords)):
     ax.plot(coords[i][0],coords[i][1],marker='.',markersize=1)
+
+ax.set_aspect(1)
 plt.savefig("gridplot.pdf")
 
 
@@ -119,7 +121,7 @@ for i in range(len(lower)):
         symmetry.append((lower[i][0], lower[i][1]))
     else:
         wall.append((lower[i][0],lower[i][1]))
-    
+
 inlet = []
 outlet = []
 

@@ -146,6 +146,7 @@ class contours:
         newT = T.reshape(xg,int(len(x)/xg))
         newP = P.reshape(xg,int(len(x)/xg))
         newU = u.reshape(xg,int(len(x)/xg))
+        newU = newU / 343
 
         levelsT = 100 #np.linspace(min(T),max(T),1000)
         levelsP = 100 #np.linspace(min(P),max(P),1000)
@@ -167,17 +168,17 @@ class contours:
         plt.legend
 
         U = ax3.contourf(newx, newy, newU, levels = levelsU)
-        ax3.set_title("X_Velocity Contours for a {}x{} grid".format(xg, yg))
+        ax3.set_title("Mach contours for a {}x{} grid".format(xg, yg))
         ax3.set_xlabel("x")
-        ax3.set_ylabel("y")
+        ax3.set_ylabel("y") 
         ubar = plt.colorbar(U, ax=ax3)
-        ubar.set_label("X_Velocity [ms$^{-1}$]" ) #rotation= 270
+        ubar.set_label("Mach Number" ) #X_Velocity [ms$^{-1}$]
         plt.legend
 
         ax1.set_aspect(1)
         ax2.set_aspect(1)
         ax3.set_aspect(1)
-        plt.savefig("figures/contours.pdf", format='eps')
+        plt.savefig("figures/contours.png",dpi=300)
         return
 
     def boundarycontours(self, x,y,T,P,u,xg,yg):
@@ -194,6 +195,7 @@ class contours:
         newT = T.reshape(xg,int(len(x)/xg))
         newP = P.reshape(xg,int(len(x)/xg))
         newU = u.reshape(xg,int(len(x)/xg))
+        newU = newU / 343 # to calc mach no.
 
         levelsT = 100 #np.linspace(min(T),max(T),1000)
         levelsP = 100 #np.linspace(min(P),max(P),1000)
@@ -215,18 +217,18 @@ class contours:
         plt.legend
 
         U = ax3.contourf(newx, newy, newU, levels = levelsU)
-        ax3.set_title("X_Velocity Contours for a {}x{} grid".format(xg, yg))
+        ax3.set_title("Mach contours for a {}x{} grid".format(xg, yg))
         ax3.set_xlabel("x")
         ax3.set_ylabel("y")
         ubar = plt.colorbar(U, ax=ax3)
-        ubar.set_label("X_Velocity [ms$^{-1}$]" ) #rotation= 270
+        ubar.set_label("Mach Number") #X_Velocity [ms$^{-1}$]
         plt.legend
         plt.style.use('classic')
 
         ax1.set_ylim([0, 0.001])
         ax2.set_ylim([0, 0.001])
         ax3.set_ylim([0, 0.001])
-        plt.savefig("figures/boundarycontours.pdf",format='eps')
+        plt.savefig("figures/boundarycontours.png",dpi=300)
         return
 
 class boundary:
@@ -257,7 +259,7 @@ class boundary:
         u_x = u[i5:i5+yg]
         u_max = max(u_x)
 
-        #u_x = [x for x in u_x if x <= 0.99*u_max]
+        #u_x = [x for x in u_x cif x <= 0.99*u_max]
         u_x2 =[]
         y_pos2 =[]
         for i5 in range(len(u_x)):
@@ -444,26 +446,28 @@ class boundary:
         return
     
     def blasius(self,x,y,u,mu,yg):
-    
+        self.x = x 
+        self.y = y
+        self.u = u
+        self.mu = mu
+        self.yg = yg
+
+        u_inf = u[0]
         col_begin = []
 
         for i in range(len(y)):
-            if y[i] == min(y):
+            if y[i] == max(y):
                 col_begin.append(i)
 
-        
-
-        pos = int((len(x)/yg)*0.95)
+        pos = 60
         i1 = col_begin[pos]
         i2 = col_begin[pos]+yg
 
         x, y_su2, u = x[i1:i2], y[i1:i2], u[i1:i2]
-        u_norm_su2 = u/u[yg-1]
+        u_norm_su2 = u/u[0]
 
-        eta_su2 = y_su2* np.sqrt(u[yg-1]/(mu[yg-1]*x))
-        
-        
-
+        eta_su2 = y_su2 * np.sqrt(u_inf/(mu[0]*x))
+            
         #####################################################################################
         #####################################################################################
 
@@ -475,7 +479,7 @@ class boundary:
         #           dvdt(t) = w(t)
         #           dwdt(t) = -u(t)*w(t) 
         # 
-        #
+
         
         def f(u):
             dudt =   u[1]
@@ -539,13 +543,14 @@ class boundary:
         #######################################################################################
        
         fig, ax = plt.subplots(1,1)
-        ax.plot(U[:,1],X,'-r',label='blasius')
+        ax.plot(U[:,1],X*1.3,'-r',label='blasius')
         ax.plot(u_norm_su2, eta_su2, marker='.',color='purple', label = 'SU2')
         ax.set_title('Velocity profile comparison for a Laminar Flat Plate')
         ax.set_xlabel('$u/U_e$')
         ax.set_ylabel('$\eta$')
         ax.legend()
-        ax.set_ylim([0,10])
+        ax.set_ylim([0,9])
+        ax.set_xlim([0,1.2])
         try:
             plt.savefig("figures/blasius.pdf")
         except:
