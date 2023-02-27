@@ -8,13 +8,13 @@ H = 0.5
 h0 = H/10
 nx = 256
 ny = 128
-a = 0.05 # smaller values compress the bump in the y direction
+a = 0.1 # smaller values compress the bump in the x direction
 b = 5 # stretching factor in y direction
 h = []
 
 eta = np.linspace(0,1,ny)
 xs = np.linspace(0,L,nx)
-for i in range(len(xs)): h.append(h0*math.exp(-((xs[i]-x0)**2)/a))
+for i in range(len(xs)): h.append(h0*math.exp(-((xs[i]-x0)/a)**2))
 
 y = []
 for ypos in eta:
@@ -24,7 +24,7 @@ x = []
 for i in range(ny): 
     for xp in xs: x.append(xp)
 
-#plt.scatter(x,y,marker='.',s=0.2)
+plt.scatter(x,y,marker='.',s=0.2)
 
 node_coords = []
 for i in range(len(x)): node_coords.append((x[i],y[i],i))

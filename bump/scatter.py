@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 import math 
 import matplotlib.cm as cm # latex module
 
-f = np.genfromtxt("../../SU2/tutorials/compressible/inviscid_bump/restart_flow.csv", names=True, delimiter = ',')
+f = np.genfromtxt("/home/maxwalker/git/SU2/bump_meshes/inv_bump_mach1_256x128/restart_flow.csv", names=True, delimiter = ',')
 
 n = 3 # number of decimals to round values to
 x = np.around(f['x'],n )
@@ -21,7 +21,7 @@ u = rhou/rho
 v = rhov/rho
 u_max = max(u)
 
-ax = plt.scatter(x,y, color = 'blue', marker ='.')
+ax = plt.scatter(x,y, color = 'blue', s=0.2)
 #plt.figure(facecolor='yellow')
 plt.title("The grid points at the top of the bump")
 plt.xlabel("x")

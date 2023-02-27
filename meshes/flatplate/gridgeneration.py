@@ -31,7 +31,7 @@ for x in range(len(xs)):
         pos_coords.append((xs[x],ys[y]))
 
 neg_coords = []
-neg_range = 0.05
+neg_range = 0
 
 for lines in pos_coords:
     if lines[0] <= neg_range:
