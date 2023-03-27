@@ -2,13 +2,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 
-L =  1.5
-x0 = L/2
-H = 0.5
-h0 = H/10
-nx = 256
-ny = 128
-a = 0.1 # smaller values compress the bump in the x direction
+L =  400
+x0 = L/3
+H = 100
+h0 = H/20
+nx = 400
+ny = 200
+a = 20 # smaller values compress the bump in the x direction
 b = 5 # stretching factor in y direction
 h = []
 

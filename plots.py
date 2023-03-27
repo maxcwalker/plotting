@@ -452,19 +452,19 @@ class boundary:
         self.mu = mu
         self.yg = yg
 
-        u_inf = u[0]
+        u_inf = u[yg-1]
         col_begin = []
 
         for i in range(len(y)):
-            if y[i] == max(y):
+            if y[i] == 0:
                 col_begin.append(i)
-
-        pos = 60
+    
+        pos = 100
         i1 = col_begin[pos]
         i2 = col_begin[pos]+yg
 
         x, y_su2, u = x[i1:i2], y[i1:i2], u[i1:i2]
-        u_norm_su2 = u/u[0]
+        u_norm_su2 = u/u[yg-1]
 
         eta_su2 = y_su2 * np.sqrt(u_inf/(mu[0]*x))
             
@@ -544,7 +544,7 @@ class boundary:
        
         fig, ax = plt.subplots(1,1)
         ax.plot(U[:,1],X*1.3,'-r',label='blasius')
-        ax.plot(u_norm_su2, eta_su2, marker='.',color='purple', label = 'SU2')
+        ax.plot(u_norm_su2, eta_su2/2.31, marker='.',color='purple', label = 'SU2')
         ax.set_title('Velocity profile comparison for a Laminar Flat Plate')
         ax.set_xlabel('$u/U_e$')
         ax.set_ylabel('$\eta$')
