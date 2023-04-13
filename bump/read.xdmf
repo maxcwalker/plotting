@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<!DOCTYPE Xdmf SYSTEM "Xdmf.dtd" []>
+<Xdmf Version="2.0">
+<Domain>
+    <Grid Name="mesh1" GridType="Uniform">
+    <Time Value = "mesh1">
+     <Topology TopologyType="2DSMesh" NumberOfElements="400 600"/><Geometry GeometryType="X_Y">
+<DataItem Dimensions="400 600" NumberType="Float" Precision="4" Format="HDF">
+ /Users/maxwalker/git/opensbli/apps/gaussian_bump/gaussian_bump_600x400/opensbli_output_pp.h5:/x0_B0
+</DataItem>
+<DataItem Dimensions="400 600" NumberType="Float" Precision="4" Format="HDF">
+ /Users/maxwalker/git/opensbli/apps/gaussian_bump/gaussian_bump_600x400/opensbli_output_pp.h5:/x1_B0
+</DataItem>
+</Geometry>
+<Attribute Name="D11_B0" AttributeType="Scalar" Center="Node">
+<DataItem Dimensions="400 600" NumberType="Float" Precision="4" Format="HDF">
+ /Users/maxwalker/git/opensbli/apps/gaussian_bump/gaussian_bump_600x400/opensbli_output_pp.h5:/D11_B0
+</DataItem>
+</Attribute>
+<Attribute Name="rhoE_B0" AttributeType="Scalar" Center="Node">
+<DataItem Dimensions="400 600" NumberType="Float" Precision="4" Format="HDF">
+ /Users/maxwalker/git/opensbli/apps/gaussian_bump/gaussian_bump_600x400/opensbli_output_pp.h5:/rhoE_B0
+</DataItem>
+</Attribute>
+<Attribute Name="rho_B0" AttributeType="Scalar" Center="Node">
+<DataItem Dimensions="400 600" NumberType="Float" Precision="4" Format="HDF">
+ /Users/maxwalker/git/opensbli/apps/gaussian_bump/gaussian_bump_600x400/opensbli_output_pp.h5:/rho_B0
+</DataItem>
+</Attribute>
+<Attribute Name="rhou0_B0" AttributeType="Scalar" Center="Node">
+<DataItem Dimensions="400 600" NumberType="Float" Precision="4" Format="HDF">
+ /Users/maxwalker/git/opensbli/apps/gaussian_bump/gaussian_bump_600x400/opensbli_output_pp.h5:/rhou0_B0
+</DataItem>
+</Attribute>
+<Attribute Name="rhou1_B0" AttributeType="Scalar" Center="Node">
+<DataItem Dimensions="400 600" NumberType="Float" Precision="4" Format="HDF">
+ /Users/maxwalker/git/opensbli/apps/gaussian_bump/gaussian_bump_600x400/opensbli_output_pp.h5:/rhou1_B0
+</DataItem>
+</Attribute>
+<Attribute Name="x0_B0" AttributeType="Scalar" Center="Node">
+<DataItem Dimensions="400 600" NumberType="Float" Precision="4" Format="HDF">
+ /Users/maxwalker/git/opensbli/apps/gaussian_bump/gaussian_bump_600x400/opensbli_output_pp.h5:/x0_B0
+</DataItem>
+</Attribute>
+<Attribute Name="x1_B0" AttributeType="Scalar" Center="Node">
+<DataItem Dimensions="400 600" NumberType="Float" Precision="4" Format="HDF">
+ /Users/maxwalker/git/opensbli/apps/gaussian_bump/gaussian_bump_600x400/opensbli_output_pp.h5:/x1_B0
+</DataItem>
+</Attribute>
+   </Grid>
+</Domain>
+</Xdmf>

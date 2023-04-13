@@ -86,7 +86,7 @@ def write_xdmf(output_name):
     with open('read.xdmf', 'w') as f:
         f.write(file_write)
     return
-    
+
 if(__name__ == "__main__"):
     # Parse the command line arguments provided by the user, Teo paths should be provided
     parser = argparse.ArgumentParser(prog="pat")

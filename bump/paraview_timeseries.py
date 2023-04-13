@@ -143,7 +143,7 @@ if(__name__ == "__main__"):
     #     raise ValueError("Provide the HDF5 file with .h5 extension")
     
 
-    # dir_path = '/home/gnsa1e21/Documents/scripts/simulations/mixflat/mixflat31/h5out_halfdomain/'
+    dir_path = '/Users/maxwalker/git/opensbli/apps/gaussian_bump/gaussian_bump_200x200/output/'
     dir_path = sys.argv[1]
     new_path = dir_path
 
