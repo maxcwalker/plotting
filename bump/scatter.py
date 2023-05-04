@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 import math 
 import matplotlib.cm as cm # latex module
 
-f = np.genfromtxt("/home/maxwalker/git/SU2/bump_meshes/inv_bump_mach1_256x128/restart_flow.csv", names=True, delimiter = ',')
+f = np.genfromtxt("//home/maxwalker/git/opensbli/apps/gaussian_bump2/gaussian_bump_400x200/restart_flow.csv", names=True, delimiter = ',')
 
 n = 3 # number of decimals to round values to
 x = np.around(f['x'],n )

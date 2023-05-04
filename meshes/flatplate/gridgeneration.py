@@ -1,10 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-L = 0.3
-H = 0.03
-nx = 65
-ny = 65
+L = 0.6
+H = 0.06
+nx = 300
+ny = 150
 fx = 4 # stretching factor for the sinh graph in x direction
 fy = 5 # stretching factor in the y direction
 

@@ -3,6 +3,8 @@ from matplotlib import pyplot as plt
 import math 
 import matplotlib.cm as cm # latex module
 
+
+
 class readfile:
 
     def __init__(self):
@@ -112,15 +114,16 @@ class plotoverx:
                 if newU[j,i] >= 0.99*max(newU[:,i]) or j==(yg-1):
                     y_boundary.append(newY[j,i])
                     break
-        
+       
         fig, ax1 = plt.subplots(1,1)
+
         ax1.plot(x_boundary,y_boundary, color='green', marker = 'x')
         ax1.set_aspect(100)
         #ax1.set_autoscale_on
         ax1.set_title('Boundary layer thickenss along the plate (99{} of $U_\infty$)'.format('%'))
         ax1.set_xlabel('x [m]')
         ax1.set_ylabel('$\delta$ [m]')
-        ax1.set_ylim(0)
+        ax1.set_ylim([0,0.0008])
         ax1.set_xlim([min(x), 0.3])
         ax1.grid()
         plt.savefig("figures/boundarythickness.pdf")
@@ -140,6 +143,8 @@ class contours:
         self.u = u
         self.xg = xg
         self.yg = yg
+
+        
 
         newx = x.reshape((xg,int(len(x)/xg)))
         newy = y.reshape(xg,int(len(x)/xg))
@@ -228,7 +233,7 @@ class contours:
         ax1.set_ylim([0, 0.001])
         ax2.set_ylim([0, 0.001])
         ax3.set_ylim([0, 0.001])
-        plt.savefig("figures/boundarycontours.png",dpi=300)
+        plt.savefig("figures/boundarycontours.png")
         return
 
 class boundary:
@@ -459,7 +464,7 @@ class boundary:
             if y[i] == 0:
                 col_begin.append(i)
     
-        pos = 100
+        pos = 90
         i1 = col_begin[pos]
         i2 = col_begin[pos]+yg
 
@@ -543,8 +548,8 @@ class boundary:
         #######################################################################################
        
         fig, ax = plt.subplots(1,1)
-        ax.plot(U[:,1],X*1.3,'-r',label='blasius')
-        ax.plot(u_norm_su2, eta_su2/2.31, marker='.',color='purple', label = 'SU2')
+        ax.plot(U[:,1],X,'-r',label='blasius')
+        ax.plot(u_norm_su2, eta_su2/2.14, marker='.',color='purple', label = 'SU2')
         ax.set_title('Velocity profile comparison for a Laminar Flat Plate')
         ax.set_xlabel('$u/U_e$')
         ax.set_ylabel('$\eta$')

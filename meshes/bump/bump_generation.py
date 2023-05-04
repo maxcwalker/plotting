@@ -6,8 +6,8 @@ L =  400
 x0 = L/3
 H = 100
 h0 = H/20
-nx = 400
-ny = 200
+nx = 256
+ny = 128
 a = 20 # smaller values compress the bump in the x direction
 b = 5 # stretching factor in y direction
 h = []
@@ -62,8 +62,14 @@ inner_type = 9
 boundary_type = 3
 
 #Then we open the file to write to, ensuring there is no carried over data points
-f = open("bump_%dx%d_grid.su2" % (nx,ny), 'w')
 
+bump_type = input('Is the bump centred (0) or offset (1)?')
+if bump_type == 0:
+    f = open("centred_bumps/bump_%dx%d_grid_centredbump.su2" % (nx,ny), 'w')
+elif bump_type == 1:
+    f = open("offset_bumps/bump_%dx%d_grid_offsetbump.su2" % (nx,ny), 'w')
+else:
+    print('BUmp type does not exist')
 #First elements of the file are the dimension number and points array:
 f.write("NDIME= " + str(N_DIME) +"\n")
 f.write("NELEM= " + str(N_ELEMS) + "\n")
