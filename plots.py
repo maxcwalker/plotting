@@ -572,8 +572,10 @@ class grid:
         self.y = y
 
         fig, ax = plt.subplots(1,1)
-        ax.scatter(x,y,marker='.')
+        ax.scatter(x,y,marker='.',s=0.1)
+        ax.locator_params(axis='y', nbins=6)
+        ax.set_aspect(2)
         ax.set_xlabel('x')
         ax.set_ylabel('y')
-        ax.set_title('Scatter graph to show mesh of domain')
+        # ax.set_title('Scatter graph to show mesh of domain')
         plt.savefig("figures/meshplot.pdf")
