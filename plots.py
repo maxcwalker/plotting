@@ -1,9 +1,10 @@
 import numpy as np
-from matplotlib import pyplot as plt
-import math 
+import matplotlib
+matplotlib.use
+import matplotlib.pyplot as plt
 import matplotlib.cm as cm # latex module
 
-
+plt.style.use('classic')
 
 class readfile:
 
@@ -123,10 +124,10 @@ class plotoverx:
         ax1.set_title('Boundary layer thickenss along the plate (99{} of $U_\infty$)'.format('%'))
         ax1.set_xlabel('x [m]')
         ax1.set_ylabel('$\delta$ [m]')
-        ax1.set_ylim([0,0.0008])
+        ax1.set_ylim([0,0.002])
         ax1.set_xlim([min(x), 0.3])
         ax1.grid()
-        plt.savefig("figures/boundarythickness.pdf")
+        plt.savefig("figures/boundarythickness.pdf", bbox_inches='tight',)
         return
     
 
@@ -431,9 +432,9 @@ class boundary:
 
         for i in range(len(y)):
             if y[i] ==  0:
-                y_wall.append(y[i-1])
-                u_wall.append(u[i-1])
-                x_wall.append(x[i-1])
+                y_wall.append(y[i+1])
+                u_wall.append(u[i+1])
+                x_wall.append(x[i+1])
 
         dudy = np.array(u_wall) / np.array(y_wall)
         t_wall = mu[0]*dudy
@@ -448,6 +449,36 @@ class boundary:
         ax.set_title('Coefficient of Friction')
         ax.grid()
         plt.savefig("figures/skinFrictGraph.pdf")
+        return
+    def heat_flux(self, x, y, T, k):
+        self.x = x
+        self.y = y
+        self.T = T
+
+        y_wall = []
+        T_wall = []
+        T_wall1 = []
+        x_wall = []
+
+        for i in range(len(y)):
+            if y[i] ==  0:
+                y_wall.append(y[i+1])
+                T_wall.append(T[i])
+                T_wall1.append(T[i+1])
+                x_wall.append(x[i+1])
+        print(y_wall)
+
+        dTdy = (np.array(T_wall1) - np.array(T_wall)) / np.array(y_wall)
+        q = k*dTdy
+        fig, ax = plt.subplots(1,1)
+        plt.style.use('ggplot')
+        ax.plot(x_wall,q)
+        ax.set_xlabel('$L$')
+        ax.set_ylim(0)
+        ax.set_ylabel(r'$\dot{q} \;[W/m^2]$')
+        ax.set_title(r'Heat flux along flat plate')
+        ax.grid()
+        plt.savefig("figures/heat_flux.pdf", bbox_inches='tight')
         return
     
     def blasius(self,x,y,u,mu,yg):
