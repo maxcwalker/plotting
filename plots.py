@@ -4,7 +4,7 @@ matplotlib.use
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm # latex module
 
-plt.style.use('classic')
+# plt.style.use('classic')
 
 class readfile:
 
@@ -54,7 +54,7 @@ class plotoverx:
         self.variable = variable
         self.varname = varname
 
-        y_pos = 0.01  # choose what point above the wall
+        y_pos = 0.002  # choose what point above the wall
         y = np.around(y, 3)
         x_pos = []
         variable1 = []
@@ -66,7 +66,7 @@ class plotoverx:
 
         fig,ax = plt.subplots(1,1)
         fig.set_size_inches(20,5)
-        ax.plot(x_pos,variable1, label = 'y position {}m'.format(y_pos))
+        ax.plot(x_pos,variable1, label = 'y = {}m'.format(y_pos))
         ax.set_xlabel('X position [m]')
 
         if varname == 'Pressure':
@@ -74,7 +74,7 @@ class plotoverx:
         elif varname == 'Velocity':
             units = 'ms$^{-1}$'
         elif varname == 'Temperature':
-            units == 'K'
+            units = 'K'
         else:
             print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
             print("This varaible has not been assigned yet")
@@ -82,10 +82,10 @@ class plotoverx:
         
         ax.set_ylabel('{} [{}]'.format(varname, units))
         ax.set_xlabel('x [m]')
-        ax.set_title('Plot of {} over domain at y = {}m'.format(varname,str(y_pos)))
+        ax.set_title('Plot of {} over x'.format(varname))
         ax.legend()
         ax.grid()
-        ax.set_xlim([-0.05, 0.3])
+        # ax.set_xlim([-0.05, 0.3])
         plt.savefig('figures/plot{}over.pdf'.format(varname))
         return
 
@@ -112,20 +112,20 @@ class plotoverx:
         print(yg)
         for i in range(xg):
             for j in range(yg):
-                if newU[j,i] >= 0.99*max(newU[:,i]) or j==(yg-1):
+                if newU[j,i] >= 0.99*max(newU[0:int(0.7*yg),i]) or j==(yg-1):
                     y_boundary.append(newY[j,i])
                     break
        
         fig, ax1 = plt.subplots(1,1)
 
         ax1.plot(x_boundary,y_boundary, color='green', marker = 'x')
-        ax1.set_aspect(100)
+        # ax1.set_aspect(100)
         #ax1.set_autoscale_on
         ax1.set_title('Boundary layer thickenss along the plate (99{} of $U_\infty$)'.format('%'))
         ax1.set_xlabel('x [m]')
         ax1.set_ylabel('$\delta$ [m]')
-        ax1.set_ylim([0,0.002])
-        ax1.set_xlim([min(x), 0.3])
+        # ax1.set_ylim([0,0.002])
+        ax1.set_xlim([0, max(x)])
         ax1.grid()
         plt.savefig("figures/boundarythickness.pdf", bbox_inches='tight',)
         return
@@ -160,20 +160,20 @@ class contours:
 
         fig, (ax1,ax2, ax3) = plt.subplots(3,1)
         fig.set_size_inches(18.5, 10.5)
-        T = ax1.contourf( newx, newy, newT, levels = levelsT, cmap=cm.jet ) 
+        T = ax1.contourf( newx, newy, newT, levels = levelsT, cmap = cm.jet ) 
         ax1.set_title("Temperature Contours for a {}x{} grid".format(xg, yg))
         ax1.set_ylabel("y")
         tbar = plt.colorbar(T, ax=ax1)
         tbar.set_label("Temperature [$^{\circ}$C]" ) #rotation= 270
 
-        P = ax2.contourf(newx, newy, newP, levels = levelsP)
+        P = ax2.contourf(newx, newy, newP, levels = levelsP, cmap = cm.jet)
         ax2.set_title("Pressure Contours for a {}x{} grid".format(xg, yg))
         ax2.set_ylabel("y")
         Pbar = plt.colorbar(P, ax=ax2)
         Pbar.set_label("Pressure [Pa]" ) #rotation= 270
         plt.legend
 
-        U = ax3.contourf(newx, newy, newU, levels = levelsU)
+        U = ax3.contourf(newx, newy, newU, levels = levelsU, cmap = cm.jet)
         ax3.set_title("Mach contours for a {}x{} grid".format(xg, yg))
         ax3.set_xlabel("x")
         ax3.set_ylabel("y") 
@@ -203,37 +203,36 @@ class contours:
         newU = u.reshape(xg,int(len(x)/xg))
         newU = newU / 343 # to calc mach no.
 
-        levelsT = 100 #np.linspace(min(T),max(T),1000)
-        levelsP = 100 #np.linspace(min(P),max(P),1000)
-        levelsU = 100 #np.linspace(0,max(u),1000)
+        levels=150
 
         fig, (ax1,ax2, ax3) = plt.subplots(3,1)
         fig.set_size_inches(18.5, 10.5)
-        T = ax1.contourf( newx, newy, newT, levels = levelsT, cmap=cm.jet ) 
+        T = ax1.contourf( newx, newy, newT, levels = levels, cmap = cm.jet) 
         ax1.set_title("Temperature Contours for a {}x{} grid".format(xg, yg))
         ax1.set_ylabel("y")
         tbar = plt.colorbar(T, ax=ax1)
         tbar.set_label("Temperature [$^{\circ}$C]" ) #rotation= 270
 
-        P = ax2.contourf(newx, newy, newP, levels = levelsP)
+        P = ax2.contourf(newx, newy, newP, levels = levels, cmap = cm.jet)
         ax2.set_title("Pressure Contours for a {}x{} grid".format(xg, yg))
         ax2.set_ylabel("y")
         Pbar = plt.colorbar(P, ax=ax2)
         Pbar.set_label("Pressure [Pa]" ) #rotation= 270
         plt.legend
 
-        U = ax3.contourf(newx, newy, newU, levels = levelsU)
+        U = ax3.contourf(newx, newy, newU, levels = levels, cmap = cm.jet)
         ax3.set_title("Mach contours for a {}x{} grid".format(xg, yg))
         ax3.set_xlabel("x")
         ax3.set_ylabel("y")
         ubar = plt.colorbar(U, ax=ax3)
         ubar.set_label("Mach Number") #X_Velocity [ms$^{-1}$]
         plt.legend
-        plt.style.use('classic')
-
-        ax1.set_ylim([0, 0.001])
-        ax2.set_ylim([0, 0.001])
-        ax3.set_ylim([0, 0.001])
+        # plt.style.use('classic')
+        
+        ylim=0.01
+        ax1.set_ylim([0, ylim])
+        ax2.set_ylim([0, ylim])
+        ax3.set_ylim([0, ylim])
         plt.savefig("figures/boundarycontours.png")
         return
 
@@ -441,7 +440,7 @@ class boundary:
         Cf = t_wall/(0.5*rho[0]*u[0])
         x_wall = np.array(x_wall)/0.3
         fig, ax = plt.subplots(1,1)
-        plt.style.use('classic')
+        # plt.style.use('classic')
         ax.plot(x_wall,Cf)
         ax.set_xlim([0,1])
         ax.set_xlabel('$x/L$')
@@ -466,17 +465,19 @@ class boundary:
                 T_wall.append(T[i])
                 T_wall1.append(T[i+1])
                 x_wall.append(x[i+1])
-        print(y_wall)
 
         dTdy = (np.array(T_wall1) - np.array(T_wall)) / np.array(y_wall)
         q = k*dTdy
         fig, ax = plt.subplots(1,1)
-        plt.style.use('ggplot')
-        ax.plot(x_wall,q)
+        # plt.style.use('ggplot')
+        ax.plot(x_wall,q, color='k')
         ax.set_xlabel('$L$')
         ax.set_ylim(0)
+        ax.set_xlim([0,max(x_wall)])
         ax.set_ylabel(r'$\dot{q} \;[W/m^2]$')
         ax.set_title(r'Heat flux along flat plate')
+        ax.ticklabel_format(style='sci', axis='y', scilimits=(0, 0))
+
         ax.grid()
         plt.savefig("figures/heat_flux.pdf", bbox_inches='tight')
         return
@@ -592,6 +593,36 @@ class boundary:
         except:
             plt.savefig("bplot.pdf")
 
+class turbulence_plots(readfile):
+
+    def __init__(self):
+        return
+
+    def plus_values(self,mu,rho):
+        fname = './restart_flow.csv'
+        x,y,rho,E,P,T,cp,mu,u,v,xg,yg,Csfx = self.variables(fname)
+        rho = rho.reshape(xg,yg)
+        y = y.reshape(xg,yg)
+        x = x.reshape(xg,yg)
+        mu = mu.reshape(xg,yg)
+        u = u.reshape(xg,yg)
+        # print(x[:,1])
+        dudy = u[:,1]/y[:,1]
+        tau_wall = mu[:,0]*dudy
+        u_tau = np.sqrt(abs(tau_wall/rho[:,0]))
+        y_plus = rho[:,0]*y[:,1]*u_tau / mu[:,0]
+        fig, ax = plt.subplots()
+        # print('x length: %d, y plus length: %d' % (len(x[:,0]), len(y_plus)))
+        ax.plot(x[:,0], y_plus,color='k')
+        ax.set_ylabel(r"$Y^+$", fontsize=20)
+        ax.set_xlabel(r"$X_0$", fontsize=20)
+        ax.set_title(r"$Y^+$ value along the flat plate", fontsize=10)
+        ax.set_xlim([0, max(x[:,0])])
+        ax.set_ylim([0, 6])
+        ax.grid()
+        fig.savefig('figures/y_plus.pdf')
+        
+
 
 class grid:
 
@@ -604,9 +635,11 @@ class grid:
 
         fig, ax = plt.subplots(1,1)
         ax.scatter(x,y,marker='.',s=0.1)
-        ax.locator_params(axis='y', nbins=6)
+        ax.locator_params(axis='y', nbins=100)
         ax.set_aspect(2)
         ax.set_xlabel('x')
         ax.set_ylabel('y')
+        ax.set_ylim([min(y),max(y)])
+        ax.set_xlim([min(x),max(x)])
         # ax.set_title('Scatter graph to show mesh of domain')
         plt.savefig("figures/meshplot.pdf")

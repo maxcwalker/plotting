@@ -1,10 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-L = 0.6
-H = 0.06
+L = 0.1
+H = 0.01
 nx = 300
-ny = 150
+ny = 100
 fx = 4 # stretching factor for the sinh graph in x direction
 fy = 5 # stretching factor in the y direction
 
@@ -31,7 +31,8 @@ for x in range(len(xs)):
         pos_coords.append((xs[x],ys[y]))
 
 neg_coords = []
-neg_range = 0
+# how long is the symmetry; 0=no symmetry 
+neg_range = 0.01
 
 for lines in pos_coords:
     if lines[0] <= neg_range:
@@ -54,11 +55,11 @@ for i in range(len(neg_coords)+len(pos_coords)):
     else:
         coords.append(pos_coords[i-len(neg_coords)])
 
-print(len(neg_coords)+len(pos_coords))
-print(len(coords))
+# print(len(neg_coords)+len(pos_coords))
+# print(len(coords))
 
 fig, ax = plt.subplots(1,1)
-print(np.shape(coords))
+# print(np.shape(coords))
 for i in range(len(coords)):
     ax.plot(coords[i][0],coords[i][1],marker='.',markersize=1)
 
